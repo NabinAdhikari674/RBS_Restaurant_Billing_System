@@ -18,7 +18,7 @@ namespace RBS_Restaurant_Billing_System
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form_AdminDashboard());
+            Application.Run(new Form_Dashboard());
         }
     }
 }

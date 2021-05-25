@@ -29,24 +29,17 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.fpnl_frmDashboard = new System.Windows.Forms.FlowLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.pnl_items_frmDashboard = new System.Windows.Forms.Panel();
-            this.pnl_menuItems_frmDashboard = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pnl_menuCat_frmDashboard = new System.Windows.Forms.Panel();
-            this.btn__1menuCat_frmDashboard = new System.Windows.Forms.Button();
-            this.lbl_menuCat_frmDashboard = new System.Windows.Forms.Label();
+            this.btn_T1_frmDashboard = new System.Windows.Forms.Button();
+            this.btn_T2_frmDashboard = new System.Windows.Forms.Button();
+            this.btn_T3_frmDashboard = new System.Windows.Forms.Button();
+            this.btn_T4_frmDashboard = new System.Windows.Forms.Button();
+            this.btn_T5_frmDashboard = new System.Windows.Forms.Button();
+            this.btn_T6_frmDashboard = new System.Windows.Forms.Button();
+            this.btn_T7_frmDashboard = new System.Windows.Forms.Button();
+            this.btn_T8_frmDashboard = new System.Windows.Forms.Button();
+            this.pnl_MenuContainer_frmDashboard = new System.Windows.Forms.Panel();
             this.pnl_receipt_frmDashboard = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button9 = new System.Windows.Forms.Button();
@@ -55,17 +48,19 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             this.panel2 = new System.Windows.Forms.Panel();
             this.button10 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_menu_frmDashboard = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.lbl_Date_frmDashboard = new System.Windows.Forms.Label();
+            this.rBS_DatabaseDataSet = new RBS_Restaurant_Billing_System.RBS_DatabaseDataSet();
+            this.rBSMenuBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rBS_MenuTableAdapter = new RBS_Restaurant_Billing_System.RBS_DatabaseDataSetTableAdapters.RBS_MenuTableAdapter();
             this.fpnl_frmDashboard.SuspendLayout();
-            this.pnl_items_frmDashboard.SuspendLayout();
-            this.pnl_menuItems_frmDashboard.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.pnl_menuCat_frmDashboard.SuspendLayout();
             this.pnl_receipt_frmDashboard.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rBS_DatabaseDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rBSMenuBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // fpnl_frmDashboard
@@ -74,274 +69,158 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             | System.Windows.Forms.AnchorStyles.Right)));
             this.fpnl_frmDashboard.AutoScroll = true;
             this.fpnl_frmDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(30)))), ((int)(((byte)(57)))));
-            this.fpnl_frmDashboard.Controls.Add(this.button1);
-            this.fpnl_frmDashboard.Controls.Add(this.button2);
-            this.fpnl_frmDashboard.Controls.Add(this.button3);
-            this.fpnl_frmDashboard.Controls.Add(this.button4);
-            this.fpnl_frmDashboard.Controls.Add(this.button5);
-            this.fpnl_frmDashboard.Controls.Add(this.button6);
-            this.fpnl_frmDashboard.Controls.Add(this.button7);
-            this.fpnl_frmDashboard.Controls.Add(this.button8);
+            this.fpnl_frmDashboard.Controls.Add(this.btn_T1_frmDashboard);
+            this.fpnl_frmDashboard.Controls.Add(this.btn_T2_frmDashboard);
+            this.fpnl_frmDashboard.Controls.Add(this.btn_T3_frmDashboard);
+            this.fpnl_frmDashboard.Controls.Add(this.btn_T4_frmDashboard);
+            this.fpnl_frmDashboard.Controls.Add(this.btn_T5_frmDashboard);
+            this.fpnl_frmDashboard.Controls.Add(this.btn_T6_frmDashboard);
+            this.fpnl_frmDashboard.Controls.Add(this.btn_T7_frmDashboard);
+            this.fpnl_frmDashboard.Controls.Add(this.btn_T8_frmDashboard);
             this.fpnl_frmDashboard.Location = new System.Drawing.Point(0, 3);
             this.fpnl_frmDashboard.Name = "fpnl_frmDashboard";
             this.fpnl_frmDashboard.Size = new System.Drawing.Size(558, 283);
             this.fpnl_frmDashboard.TabIndex = 4;
             // 
-            // button1
+            // btn_T1_frmDashboard
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(21)))), ((int)(((byte)(51)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.button1.Location = new System.Drawing.Point(10, 10);
-            this.button1.Margin = new System.Windows.Forms.Padding(10);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(216, 73);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Table 1";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btn_T1_frmDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.btn_T1_frmDashboard.FlatAppearance.BorderSize = 0;
+            this.btn_T1_frmDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(21)))), ((int)(((byte)(51)))));
+            this.btn_T1_frmDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_T1_frmDashboard.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_T1_frmDashboard.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btn_T1_frmDashboard.Location = new System.Drawing.Point(10, 10);
+            this.btn_T1_frmDashboard.Margin = new System.Windows.Forms.Padding(10);
+            this.btn_T1_frmDashboard.Name = "btn_T1_frmDashboard";
+            this.btn_T1_frmDashboard.Size = new System.Drawing.Size(216, 73);
+            this.btn_T1_frmDashboard.TabIndex = 0;
+            this.btn_T1_frmDashboard.Text = "Table 1";
+            this.btn_T1_frmDashboard.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btn_T2_frmDashboard
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(21)))), ((int)(((byte)(51)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.button2.Location = new System.Drawing.Point(246, 10);
-            this.button2.Margin = new System.Windows.Forms.Padding(10);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(216, 73);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Table 2";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btn_T2_frmDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.btn_T2_frmDashboard.FlatAppearance.BorderSize = 0;
+            this.btn_T2_frmDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(21)))), ((int)(((byte)(51)))));
+            this.btn_T2_frmDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_T2_frmDashboard.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_T2_frmDashboard.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btn_T2_frmDashboard.Location = new System.Drawing.Point(246, 10);
+            this.btn_T2_frmDashboard.Margin = new System.Windows.Forms.Padding(10);
+            this.btn_T2_frmDashboard.Name = "btn_T2_frmDashboard";
+            this.btn_T2_frmDashboard.Size = new System.Drawing.Size(216, 73);
+            this.btn_T2_frmDashboard.TabIndex = 1;
+            this.btn_T2_frmDashboard.Text = "Table 2";
+            this.btn_T2_frmDashboard.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btn_T3_frmDashboard
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(21)))), ((int)(((byte)(51)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.button3.Location = new System.Drawing.Point(10, 103);
-            this.button3.Margin = new System.Windows.Forms.Padding(10);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(216, 73);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Table 3";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btn_T3_frmDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.btn_T3_frmDashboard.FlatAppearance.BorderSize = 0;
+            this.btn_T3_frmDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(21)))), ((int)(((byte)(51)))));
+            this.btn_T3_frmDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_T3_frmDashboard.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_T3_frmDashboard.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btn_T3_frmDashboard.Location = new System.Drawing.Point(10, 103);
+            this.btn_T3_frmDashboard.Margin = new System.Windows.Forms.Padding(10);
+            this.btn_T3_frmDashboard.Name = "btn_T3_frmDashboard";
+            this.btn_T3_frmDashboard.Size = new System.Drawing.Size(216, 73);
+            this.btn_T3_frmDashboard.TabIndex = 2;
+            this.btn_T3_frmDashboard.Text = "Table 3";
+            this.btn_T3_frmDashboard.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // btn_T4_frmDashboard
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(21)))), ((int)(((byte)(51)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.button4.Location = new System.Drawing.Point(246, 103);
-            this.button4.Margin = new System.Windows.Forms.Padding(10);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(216, 73);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Table 4";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btn_T4_frmDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.btn_T4_frmDashboard.FlatAppearance.BorderSize = 0;
+            this.btn_T4_frmDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(21)))), ((int)(((byte)(51)))));
+            this.btn_T4_frmDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_T4_frmDashboard.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_T4_frmDashboard.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btn_T4_frmDashboard.Location = new System.Drawing.Point(246, 103);
+            this.btn_T4_frmDashboard.Margin = new System.Windows.Forms.Padding(10);
+            this.btn_T4_frmDashboard.Name = "btn_T4_frmDashboard";
+            this.btn_T4_frmDashboard.Size = new System.Drawing.Size(216, 73);
+            this.btn_T4_frmDashboard.TabIndex = 3;
+            this.btn_T4_frmDashboard.Text = "Table 4";
+            this.btn_T4_frmDashboard.UseVisualStyleBackColor = false;
             // 
-            // button5
+            // btn_T5_frmDashboard
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(21)))), ((int)(((byte)(51)))));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.button5.Location = new System.Drawing.Point(10, 196);
-            this.button5.Margin = new System.Windows.Forms.Padding(10);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(216, 73);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Table 5";
-            this.button5.UseVisualStyleBackColor = false;
+            this.btn_T5_frmDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.btn_T5_frmDashboard.FlatAppearance.BorderSize = 0;
+            this.btn_T5_frmDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(21)))), ((int)(((byte)(51)))));
+            this.btn_T5_frmDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_T5_frmDashboard.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_T5_frmDashboard.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btn_T5_frmDashboard.Location = new System.Drawing.Point(10, 196);
+            this.btn_T5_frmDashboard.Margin = new System.Windows.Forms.Padding(10);
+            this.btn_T5_frmDashboard.Name = "btn_T5_frmDashboard";
+            this.btn_T5_frmDashboard.Size = new System.Drawing.Size(216, 73);
+            this.btn_T5_frmDashboard.TabIndex = 4;
+            this.btn_T5_frmDashboard.Text = "Table 5";
+            this.btn_T5_frmDashboard.UseVisualStyleBackColor = false;
             // 
-            // button6
+            // btn_T6_frmDashboard
             // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(21)))), ((int)(((byte)(51)))));
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.button6.Location = new System.Drawing.Point(246, 196);
-            this.button6.Margin = new System.Windows.Forms.Padding(10);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(216, 73);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "Table 6";
-            this.button6.UseVisualStyleBackColor = false;
+            this.btn_T6_frmDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.btn_T6_frmDashboard.FlatAppearance.BorderSize = 0;
+            this.btn_T6_frmDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(21)))), ((int)(((byte)(51)))));
+            this.btn_T6_frmDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_T6_frmDashboard.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_T6_frmDashboard.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btn_T6_frmDashboard.Location = new System.Drawing.Point(246, 196);
+            this.btn_T6_frmDashboard.Margin = new System.Windows.Forms.Padding(10);
+            this.btn_T6_frmDashboard.Name = "btn_T6_frmDashboard";
+            this.btn_T6_frmDashboard.Size = new System.Drawing.Size(216, 73);
+            this.btn_T6_frmDashboard.TabIndex = 5;
+            this.btn_T6_frmDashboard.Text = "Table 6";
+            this.btn_T6_frmDashboard.UseVisualStyleBackColor = false;
             // 
-            // button7
+            // btn_T7_frmDashboard
             // 
-            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(21)))), ((int)(((byte)(51)))));
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.button7.Location = new System.Drawing.Point(10, 289);
-            this.button7.Margin = new System.Windows.Forms.Padding(10);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(216, 73);
-            this.button7.TabIndex = 6;
-            this.button7.Text = "Table 7";
-            this.button7.UseVisualStyleBackColor = false;
+            this.btn_T7_frmDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.btn_T7_frmDashboard.FlatAppearance.BorderSize = 0;
+            this.btn_T7_frmDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(21)))), ((int)(((byte)(51)))));
+            this.btn_T7_frmDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_T7_frmDashboard.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_T7_frmDashboard.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btn_T7_frmDashboard.Location = new System.Drawing.Point(10, 289);
+            this.btn_T7_frmDashboard.Margin = new System.Windows.Forms.Padding(10);
+            this.btn_T7_frmDashboard.Name = "btn_T7_frmDashboard";
+            this.btn_T7_frmDashboard.Size = new System.Drawing.Size(216, 73);
+            this.btn_T7_frmDashboard.TabIndex = 6;
+            this.btn_T7_frmDashboard.Text = "Table 7";
+            this.btn_T7_frmDashboard.UseVisualStyleBackColor = false;
             // 
-            // button8
+            // btn_T8_frmDashboard
             // 
-            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(21)))), ((int)(((byte)(51)))));
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.button8.Location = new System.Drawing.Point(246, 289);
-            this.button8.Margin = new System.Windows.Forms.Padding(10);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(216, 73);
-            this.button8.TabIndex = 7;
-            this.button8.Text = "Table 8";
-            this.button8.UseVisualStyleBackColor = false;
+            this.btn_T8_frmDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.btn_T8_frmDashboard.FlatAppearance.BorderSize = 0;
+            this.btn_T8_frmDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(21)))), ((int)(((byte)(51)))));
+            this.btn_T8_frmDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_T8_frmDashboard.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_T8_frmDashboard.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btn_T8_frmDashboard.Location = new System.Drawing.Point(246, 289);
+            this.btn_T8_frmDashboard.Margin = new System.Windows.Forms.Padding(10);
+            this.btn_T8_frmDashboard.Name = "btn_T8_frmDashboard";
+            this.btn_T8_frmDashboard.Size = new System.Drawing.Size(216, 73);
+            this.btn_T8_frmDashboard.TabIndex = 7;
+            this.btn_T8_frmDashboard.Text = "Table 8";
+            this.btn_T8_frmDashboard.UseVisualStyleBackColor = false;
             // 
-            // pnl_items_frmDashboard
+            // pnl_MenuContainer_frmDashboard
             // 
-            this.pnl_items_frmDashboard.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.pnl_MenuContainer_frmDashboard.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnl_items_frmDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(30)))), ((int)(((byte)(57)))));
-            this.pnl_items_frmDashboard.Controls.Add(this.pnl_menuItems_frmDashboard);
-            this.pnl_items_frmDashboard.Controls.Add(this.pnl_menuCat_frmDashboard);
-            this.pnl_items_frmDashboard.Location = new System.Drawing.Point(0, 292);
-            this.pnl_items_frmDashboard.Name = "pnl_items_frmDashboard";
-            this.pnl_items_frmDashboard.Size = new System.Drawing.Size(558, 341);
-            this.pnl_items_frmDashboard.TabIndex = 5;
-            // 
-            // pnl_menuItems_frmDashboard
-            // 
-            this.pnl_menuItems_frmDashboard.Controls.Add(this.tableLayoutPanel1);
-            this.pnl_menuItems_frmDashboard.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_menuItems_frmDashboard.Location = new System.Drawing.Point(169, 0);
-            this.pnl_menuItems_frmDashboard.Name = "pnl_menuItems_frmDashboard";
-            this.pnl_menuItems_frmDashboard.Size = new System.Drawing.Size(389, 341);
-            this.pnl_menuItems_frmDashboard.TabIndex = 1;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.AutoScroll = true;
-            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel1.Controls.Add(this.label4, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label3, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 7);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(389, 70);
-            this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label4.Location = new System.Drawing.Point(275, 1);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(110, 30);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Quantity";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label3.Location = new System.Drawing.Point(197, 1);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 30);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Price";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label1.Location = new System.Drawing.Point(4, 1);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(186, 30);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Items from Cofee";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pnl_menuCat_frmDashboard
-            // 
-            this.pnl_menuCat_frmDashboard.Controls.Add(this.btn__1menuCat_frmDashboard);
-            this.pnl_menuCat_frmDashboard.Controls.Add(this.lbl_menuCat_frmDashboard);
-            this.pnl_menuCat_frmDashboard.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnl_menuCat_frmDashboard.Location = new System.Drawing.Point(0, 0);
-            this.pnl_menuCat_frmDashboard.Name = "pnl_menuCat_frmDashboard";
-            this.pnl_menuCat_frmDashboard.Size = new System.Drawing.Size(169, 341);
-            this.pnl_menuCat_frmDashboard.TabIndex = 0;
-            // 
-            // btn__1menuCat_frmDashboard
-            // 
-            this.btn__1menuCat_frmDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.btn__1menuCat_frmDashboard.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn__1menuCat_frmDashboard.FlatAppearance.BorderSize = 0;
-            this.btn__1menuCat_frmDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(21)))), ((int)(((byte)(51)))));
-            this.btn__1menuCat_frmDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn__1menuCat_frmDashboard.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn__1menuCat_frmDashboard.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btn__1menuCat_frmDashboard.Location = new System.Drawing.Point(0, 29);
-            this.btn__1menuCat_frmDashboard.Margin = new System.Windows.Forms.Padding(10);
-            this.btn__1menuCat_frmDashboard.Name = "btn__1menuCat_frmDashboard";
-            this.btn__1menuCat_frmDashboard.Size = new System.Drawing.Size(169, 41);
-            this.btn__1menuCat_frmDashboard.TabIndex = 5;
-            this.btn__1menuCat_frmDashboard.Text = "Cofee";
-            this.btn__1menuCat_frmDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn__1menuCat_frmDashboard.UseVisualStyleBackColor = false;
-            // 
-            // lbl_menuCat_frmDashboard
-            // 
-            this.lbl_menuCat_frmDashboard.AutoSize = true;
-            this.lbl_menuCat_frmDashboard.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lbl_menuCat_frmDashboard.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_menuCat_frmDashboard.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.lbl_menuCat_frmDashboard.Location = new System.Drawing.Point(0, 0);
-            this.lbl_menuCat_frmDashboard.Margin = new System.Windows.Forms.Padding(0);
-            this.lbl_menuCat_frmDashboard.Name = "lbl_menuCat_frmDashboard";
-            this.lbl_menuCat_frmDashboard.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
-            this.lbl_menuCat_frmDashboard.Size = new System.Drawing.Size(132, 29);
-            this.lbl_menuCat_frmDashboard.TabIndex = 0;
-            this.lbl_menuCat_frmDashboard.Text = "Item Categories";
+            this.pnl_MenuContainer_frmDashboard.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.pnl_MenuContainer_frmDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(30)))), ((int)(((byte)(57)))));
+            this.pnl_MenuContainer_frmDashboard.Location = new System.Drawing.Point(0, 292);
+            this.pnl_MenuContainer_frmDashboard.Name = "pnl_MenuContainer_frmDashboard";
+            this.pnl_MenuContainer_frmDashboard.Size = new System.Drawing.Size(558, 341);
+            this.pnl_MenuContainer_frmDashboard.TabIndex = 5;
             // 
             // pnl_receipt_frmDashboard
             // 
@@ -447,6 +326,7 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(30)))), ((int)(((byte)(57)))));
+            this.panel1.Controls.Add(this.btn_menu_frmDashboard);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.lbl_Date_frmDashboard);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -455,16 +335,36 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             this.panel1.Size = new System.Drawing.Size(410, 50);
             this.panel1.TabIndex = 2;
             // 
+            // btn_menu_frmDashboard
+            // 
+            this.btn_menu_frmDashboard.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_menu_frmDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.btn_menu_frmDashboard.BackgroundImage = global::RBS_Restaurant_Billing_System.Properties.Resources.gear;
+            this.btn_menu_frmDashboard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_menu_frmDashboard.FlatAppearance.BorderSize = 0;
+            this.btn_menu_frmDashboard.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Violet;
+            this.btn_menu_frmDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(21)))), ((int)(((byte)(51)))));
+            this.btn_menu_frmDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_menu_frmDashboard.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_menu_frmDashboard.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btn_menu_frmDashboard.Location = new System.Drawing.Point(0, 9);
+            this.btn_menu_frmDashboard.Margin = new System.Windows.Forms.Padding(10);
+            this.btn_menu_frmDashboard.Name = "btn_menu_frmDashboard";
+            this.btn_menu_frmDashboard.Size = new System.Drawing.Size(31, 25);
+            this.btn_menu_frmDashboard.TabIndex = 7;
+            this.btn_menu_frmDashboard.Text = "-";
+            this.btn_menu_frmDashboard.UseVisualStyleBackColor = false;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(240, 14);
+            this.label2.Location = new System.Drawing.Point(37, 9);
             this.label2.Name = "label2";
-            this.label2.Padding = new System.Windows.Forms.Padding(2);
-            this.label2.Size = new System.Drawing.Size(115, 23);
+            this.label2.Padding = new System.Windows.Forms.Padding(3);
+            this.label2.Size = new System.Drawing.Size(117, 25);
             this.label2.TabIndex = 0;
             this.label2.Text = "User : Leonardo";
             // 
@@ -474,12 +374,26 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             this.lbl_Date_frmDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.lbl_Date_frmDashboard.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Date_frmDashboard.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lbl_Date_frmDashboard.Location = new System.Drawing.Point(3, 14);
+            this.lbl_Date_frmDashboard.Location = new System.Drawing.Point(160, 9);
             this.lbl_Date_frmDashboard.Name = "lbl_Date_frmDashboard";
-            this.lbl_Date_frmDashboard.Padding = new System.Windows.Forms.Padding(4);
-            this.lbl_Date_frmDashboard.Size = new System.Drawing.Size(100, 27);
+            this.lbl_Date_frmDashboard.Padding = new System.Windows.Forms.Padding(3);
+            this.lbl_Date_frmDashboard.Size = new System.Drawing.Size(98, 25);
             this.lbl_Date_frmDashboard.TabIndex = 1;
             this.lbl_Date_frmDashboard.Text = "Current Date";
+            // 
+            // rBS_DatabaseDataSet
+            // 
+            this.rBS_DatabaseDataSet.DataSetName = "RBS_DatabaseDataSet";
+            this.rBS_DatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // rBSMenuBindingSource
+            // 
+            this.rBSMenuBindingSource.DataMember = "RBS_Menu";
+            this.rBSMenuBindingSource.DataSource = this.rBS_DatabaseDataSet;
+            // 
+            // rBS_MenuTableAdapter
+            // 
+            this.rBS_MenuTableAdapter.ClearBeforeFill = true;
             // 
             // Form_Dashboard
             // 
@@ -488,7 +402,7 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.ClientSize = new System.Drawing.Size(974, 611);
             this.Controls.Add(this.pnl_receipt_frmDashboard);
-            this.Controls.Add(this.pnl_items_frmDashboard);
+            this.Controls.Add(this.pnl_MenuContainer_frmDashboard);
             this.Controls.Add(this.fpnl_frmDashboard);
             this.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ControlLight;
@@ -499,17 +413,13 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             this.Text = "RBS : Dashboard";
             this.Load += new System.EventHandler(this.Form_Dashboard_Load);
             this.fpnl_frmDashboard.ResumeLayout(false);
-            this.pnl_items_frmDashboard.ResumeLayout(false);
-            this.pnl_menuItems_frmDashboard.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
-            this.pnl_menuCat_frmDashboard.ResumeLayout(false);
-            this.pnl_menuCat_frmDashboard.PerformLayout();
             this.pnl_receipt_frmDashboard.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rBS_DatabaseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rBSMenuBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -517,23 +427,15 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
         #endregion
 
         private System.Windows.Forms.FlowLayoutPanel fpnl_frmDashboard;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Panel pnl_items_frmDashboard;
-        private System.Windows.Forms.Panel pnl_menuItems_frmDashboard;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel pnl_menuCat_frmDashboard;
-        private System.Windows.Forms.Button btn__1menuCat_frmDashboard;
-        private System.Windows.Forms.Label lbl_menuCat_frmDashboard;
+        private System.Windows.Forms.Button btn_T1_frmDashboard;
+        private System.Windows.Forms.Button btn_T2_frmDashboard;
+        private System.Windows.Forms.Button btn_T3_frmDashboard;
+        private System.Windows.Forms.Button btn_T4_frmDashboard;
+        private System.Windows.Forms.Button btn_T5_frmDashboard;
+        private System.Windows.Forms.Button btn_T6_frmDashboard;
+        private System.Windows.Forms.Button btn_T7_frmDashboard;
+        private System.Windows.Forms.Button btn_T8_frmDashboard;
+        private System.Windows.Forms.Panel pnl_MenuContainer_frmDashboard;
         private System.Windows.Forms.Panel pnl_receipt_frmDashboard;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button button9;
@@ -544,5 +446,9 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lbl_Date_frmDashboard;
+        private RBS_DatabaseDataSet rBS_DatabaseDataSet;
+        private System.Windows.Forms.BindingSource rBSMenuBindingSource;
+        private RBS_DatabaseDataSetTableAdapters.RBS_MenuTableAdapter rBS_MenuTableAdapter;
+        private System.Windows.Forms.Button btn_menu_frmDashboard;
     }
 }

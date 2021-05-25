@@ -49,7 +49,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -61,6 +63,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Layer_Data\Data_User.cs" />
+    <Compile Include="Layer_Logic\Logic_User.cs" />
     <Compile Include="Layer_UI\AdminUI\Form_AdminDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +131,12 @@
     <Compile Include="Layer_UI\Form_Login.Designer.cs">
       <DependentUpon>Form_Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Layer_UI\UserControl_OrderMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Layer_UI\UserControl_OrderMenu.Designer.cs">
+      <DependentUpon>UserControl_OrderMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RBS_DatabaseDataSet.Designer.cs">
@@ -167,6 +177,9 @@
     <EmbeddedResource Include="Layer_UI\Form_Login.resx">
       <DependentUpon>Form_Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Layer_UI\UserControl_OrderMenu.resx">
+      <DependentUpon>UserControl_OrderMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -203,12 +216,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="RBS_Database.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="RBS_Database_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>RBS_Database.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\gear.gif" />
+    <None Include="Resources\menu_icon_black.jpg" />
+    <None Include="Resources\menu_icon.png" />
     <None Include="Resources\login_animation.gif" />
     <None Include="Resources\pass_icon.png" />
     <None Include="Resources\user_icon.png" />
@@ -226,9 +242,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Layer_Data\" />
-    <Folder Include="Layer_Logic\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
