@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RBS_Restaurant_Billing_System.Layer_Logic;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -10,23 +11,30 @@ using System.Windows.Forms;
 
 namespace RBS_Restaurant_Billing_System.Layer_Data
 {
-    class Data_Menu
+    class Data_Transactions
     {
         static string dataConString = ConfigurationManager.ConnectionStrings["RBS_Restaurant_Billing_System.Properties.Settings.RBS_DatabaseConnectionString"].ConnectionString;
 
-        #region SELECT _Data_ FROM RBS_MENU
-        public DataTable Select()
+        #region INSERT _DATA_ INTO RBS_TRANSACTIONS
+        public bool Insert(Logic_Transactions transaction)
         {
+            bool success = false;
             SqlConnection conn = new SqlConnection(dataConString);
-            DataTable table = new DataTable();
-            string sql = "SELECT * FROM RBS_MENU";
+            String sql = "INSERT INTO RBS_TRANSACTIONS (Cashier,Amount,Items) ";
+            sql += "VALUES (@Cashier,@Amount,@Items)";
 
             try
             {
                 SqlCommand cmd = new SqlCommand(sql, conn);
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                cmd.Parameters.AddWithValue("@Cashier", transaction.Cashier);
+                cmd.Parameters.AddWithValue("@Amount", transaction.Amount);
+                cmd.Parameters.AddWithValue("@Items", transaction.Items);
+
                 conn.Open();
-                adapter.Fill(table);
+                int res = cmd.ExecuteNonQuery();
+                if (res > 0)
+                    success = true;
+
             }
             catch (Exception exp)
             {
@@ -36,9 +44,11 @@ namespace RBS_Restaurant_Billing_System.Layer_Data
             {
                 conn.Close();
             }
-            return table;
+            return success;
         }
 
         #endregion
+
+
     }
 }

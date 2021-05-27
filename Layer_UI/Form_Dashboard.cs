@@ -16,9 +16,16 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
     public partial class Form_Dashboard : Form
     {
         System.Windows.Forms.Timer timer = null;
-        Logic_Menu menuL = new Logic_Menu();
+        Logic_Transactions logic_Transactions = new Logic_Transactions();
         Data_Menu menuD = new Data_Menu();
+        Data_Transactions transactionD = new Data_Transactions();
         static DataTable menuData = null;
+        static Control activeBill = null;
+        static Control activeMenu = null;
+        static Control activeButton = null;
+        static List<Control> pendingTables = new List<Control>();
+
+
         public Form_Dashboard()
         {
             InitializeComponent();
@@ -33,7 +40,11 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             menuData = menuD.Select();
         }
 
+        
+
+
         #region Clock
+
         private void StartTimer()
         {
             timer = new System.Windows.Forms.Timer();
@@ -47,6 +58,8 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             lbl_Date_frmDashboard.Text = DateTime.Now.ToString("ddd, dd MMMM yyyy | h:mm:s tt");
         }
         #endregion
+        
+
         
         private void TableButtonsSetup()
         {
@@ -69,23 +82,50 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             btn_T8_frmDashboard.Click += HandleTableButtonClicks;
         }
         
-        
         private void HandleTableButtonClicks(object sender, EventArgs e)
         {
             Button button = sender as Button;
+             ///57, 21, 51
             if (button.Tag == null)
             {
                 button.Tag = new Panel();
                 Panel menuPanel = button.Tag as Panel;
                 pnl_MenuContainer_frmDashboard.Controls.Add(button.Tag as Panel);
                 menuPanel.Dock = DockStyle.Fill;
-                menuPanel.Tag = "menuPanel";
+
+
+                menuPanel.Tag = new Panel();
+                Panel billPanel = menuPanel.Tag as Panel;
+                billPanel.AutoScroll = true;
+                pnl_billContainer_frmDashboard.Controls.Add(billPanel);
+                billPanel.Dock = DockStyle.Fill;
+                //billPanel.Tag = "billPanel_" + button.Text;
+
                 BuildMenuCategories(menuPanel,button.Text);
-                BuildBillPanel(button.Text);
+                BuildBillPanel(billPanel,button.Text);
             }
-            
+            activeBill = (button.Tag as Panel).Tag as Panel;
+            activeMenu = button.Tag as Panel;
+            if(activeButton!=null & !pendingTables.Contains(activeButton))
+            {
+                activeButton.BackColor = Color.FromArgb(19,7,17);
+            } 
+            else if(activeButton != null & pendingTables.Contains(activeButton))
+            {
+                activeButton.BackColor = Color.FromArgb(57, 21, 51);
+            }
+            activeButton = button;
+            if (pendingTables.Contains(activeButton))
+            {
+                btn_pending_frmDashboard.BackColor = Color.FromArgb(149, 34, 153);
+            }
+            else
+                btn_pending_frmDashboard.BackColor = Color.FromArgb(19, 7, 17);
+            activeButton.BackColor = Color.FromArgb(149, 34, 153);
             ShowMenuPanel(button.Tag as Panel);
+            ShowBillPanel((button.Tag as Panel).Tag as Panel);
         }
+        
         private void ShowMenuPanel(Control value)
         {
             foreach (Control ctrl in pnl_MenuContainer_frmDashboard.Controls)
@@ -95,8 +135,22 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
                     ctrl.Visible = false;
                 }
             }
+
             value.Visible = true;
         }
+        
+        private void ShowBillPanel(Control value)
+        {
+            foreach (Control ctrl in pnl_billContainer_frmDashboard.Controls)
+            {
+                if(ctrl is Panel)
+                {
+                    ctrl.Visible = false; 
+                }
+            }
+            value.Visible = true;
+        }
+
         private void BuildMenuCategories(Panel menuPanel,string tablename)
         {
             Panel sidePanel = new Panel();
@@ -133,14 +187,8 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             label.Dock = DockStyle.Top;
         }
         
-        private void BuildBillPanel(string tablename)
+        private void BuildBillPanel(Panel billPanel,string tablename)
         {
-            Panel billPanel = new Panel();
-            pnl_bill_frmDashboard.Controls.Add(billPanel);
-            billPanel.Dock = DockStyle.Fill;
-            billPanel.Tag = "billPanel_" + tablename;
-            //billPanel.BackColor = Color.Red; 
-
             Panel billIntro = new Panel();
             billPanel.Controls.Add(billIntro);
             billIntro.Dock = DockStyle.Top;
@@ -188,7 +236,8 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
 
 
 
-            TableLayoutPanel billContent = new TableLayoutPanel();
+            billPanel.Tag = new TableLayoutPanel();
+            TableLayoutPanel billContent = billPanel.Tag as TableLayoutPanel;
             billContent.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
             billContent.ColumnCount = 4;
             billContent.RowCount = 1;
@@ -207,26 +256,28 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             billContent.Dock = DockStyle.Top;
             billContent.BringToFront();
             billContent.AutoSize = true;
+            //billContent.AutoScroll = true;
             //billContent.BackColor = Color.Green;
 
-            Panel billTotal = new Panel();
+            billContent.Tag = new Panel();
+            Panel billTotal = billContent.Tag as Panel;
             billPanel.Controls.Add(billTotal);
             billTotal.Dock = DockStyle.Bottom;
             //billTotal.Size = new Size(400, 50);
             Label subTotal = new Label();
-            subTotal.Text = "SubTotal";
+            subTotal.Text = "SubTotal : 0";
             subTotal.Dock = DockStyle.Top;
             subTotal.TextAlign = ContentAlignment.MiddleRight;
             Label subVAT = new Label();
-            subVAT.Text = "VAT";
+            subVAT.Text = "VAT : 13%";
             subVAT.Dock = DockStyle.Top;
             subVAT.TextAlign = ContentAlignment.MiddleRight;
             Label discount = new Label();
-            discount.Text = "Discount";
+            discount.Text = "Discount : 10%";
             discount.Dock = DockStyle.Top;
             discount.TextAlign = ContentAlignment.MiddleRight;
             Label total = new Label();
-            total.Text = "TOTAL";
+            total.Text = "TOTAL : 0";
             total.Dock = DockStyle.Bottom;
             total.TextAlign = ContentAlignment.MiddleRight;
             Label cashier = new Label();
@@ -234,6 +285,10 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             cashier.Dock = DockStyle.Left;
             cashier.TextAlign = ContentAlignment.MiddleCenter;
             cashier.AutoSize = true;
+            billTotal.Tag = subTotal;
+            subTotal.Tag = subVAT;
+            subVAT.Tag = discount;
+            discount.Tag = total;
             billTotal.Controls.Add(cashier);
             billTotal.Controls.Add(discount);
             billTotal.Controls.Add(subVAT);
@@ -277,6 +332,7 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
        
         
 
+        
         
         private void HandleCatButtonClicks(object sender, EventArgs e)
         {
@@ -332,8 +388,9 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
                     Panel panel = new Panel();
 
                     Button btMinus = new Button();
-                    btMinus.Tag = cat["ItemName"].ToString()+"=-";
+                    btMinus.Name = cat["ItemName"].ToString()+"^"+cat["Price"]+"^-";
                     StyleItemButtons(btMinus);
+                    btMinus.Click += HandleQuantityandBill;
                     btMinus.Text = "-";
                     btMinus.Dock = DockStyle.Left;
                     btMinus.Visible = true;
@@ -341,17 +398,19 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
                     Label quantityL = new Label();
                     quantityL.Text = "0";
                     StyleItemLabels(quantityL);
-                    //quantityL.SendToBack();
                     quantityL.Dock = DockStyle.Fill;
                     quantityL.Visible = true;
 
                     Button btPlus = new Button();
-                    btPlus.Tag = cat["ItemName"].ToString()+"=+";
+                    btPlus.Name = cat["ItemName"].ToString() + "^" + cat["Price"] + "^+";
                     StyleItemButtons(btPlus);
+                    btPlus.Click += HandleQuantityandBill;
                     btPlus.Text = "+";
                     btPlus.Dock = DockStyle.Right;
                     btPlus.Visible = true;
 
+                    btMinus.Tag = quantityL;
+                    btPlus.Tag = quantityL;
                     panel.Controls.Add(btPlus);
                     panel.Controls.Add(btMinus);
                     panel.Controls.Add(quantityL);
@@ -392,5 +451,206 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             lbl.TextAlign = ContentAlignment.MiddleCenter;
             lbl.Size = new Size(50, 45);
         }
+    
+
+
+        
+        private void HandleQuantityandBill(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+            TableLayoutPanel billTable = activeBill.Tag as TableLayoutPanel; // 4 Columns // Item Rate Quantity Total
+            List<string> stringList = (button.Name).ToString().Split('^').ToList();
+
+            int x = FindRow(billTable, stringList[0]);
+
+            if (stringList[2]=="+")
+            {
+                if (x != -1)
+                {
+                    Control quantity = billTable.GetControlFromPosition(2, x);
+                    int q = int.Parse(quantity.Text)+1;
+                    quantity.Text = q.ToString();
+                    Control rate = billTable.GetControlFromPosition(1, x);
+                    float t = float.Parse(rate.Text)*q;
+                    Control total = billTable.GetControlFromPosition(3, x);
+                    total.Text = t.ToString();
+
+                    (button.Tag as Label).Text = q.ToString();
+                    ReTotalBill(billTable);
+                }
+                else
+                {
+                    billTable.RowCount += 1;
+                    billTable.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
+
+                    billTable.Controls.Add(new Label() { Text = stringList[0] }, 0, billTable.RowCount - 1);
+                    billTable.Controls.Add(new Label() { Text = stringList[1] }, 1, billTable.RowCount - 1);
+                    billTable.Controls.Add(new Label() { Text = "1" }, 2, billTable.RowCount - 1);
+                    billTable.Controls.Add(new Label() { Text = stringList[1] }, 3, billTable.RowCount - 1);
+
+                    (button.Tag as Label).Text = "1";
+                    ReTotalBill(billTable);
+                }
+                
+
+            }
+            else if (stringList[2] == "-")
+            {
+                if(x != -1)
+                {
+                    Control quantity = billTable.GetControlFromPosition(2, x);
+                    int q = int.Parse(quantity.Text) - 1;
+                    if (q <= 0)
+                    {
+                        RemoveRow(billTable, x);
+                        (button.Tag as Label).Text = q.ToString();
+                        ReTotalBill(billTable);
+                        return;
+                    }
+                    quantity.Text = q.ToString();
+                    Control rate = billTable.GetControlFromPosition(1, x);
+                    float t = float.Parse(rate.Text) * q;
+                    Control total = billTable.GetControlFromPosition(3, x);
+                    total.Text = t.ToString();
+
+                    (button.Tag as Label).Text = q.ToString();
+                    ReTotalBill(billTable);
+                }
+
+            }
+
+        }
+
+        private int FindRow(TableLayoutPanel panel, string query)
+        {
+            for(int i = 1; i < panel.RowCount; i++)
+            {
+                Control control = panel.GetControlFromPosition(0, i);
+                if(control.Text == query)
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
+        
+        private void RemoveRow(TableLayoutPanel panel, int rowIndex)
+        {
+            if (rowIndex >= panel.RowCount)
+            {
+                return;
+            }
+
+            // delete all controls of row that we want to delete
+            for (int i = 0; i < panel.ColumnCount; i++)
+            {
+                var control = panel.GetControlFromPosition(i, rowIndex);
+                panel.Controls.Remove(control);
+            }
+
+            // move up row controls that comes after row we want to remove
+            for (int i = rowIndex + 1; i < panel.RowCount; i++)
+            {
+                for (int j = 0; j < panel.ColumnCount; j++)
+                {
+                    var control = panel.GetControlFromPosition(j, i);
+                    if (control != null)
+                    {
+                        panel.SetRow(control, i - 1);
+                    }
+                }
+            }
+
+            var removeStyle = panel.RowCount - 1;
+
+            if (panel.RowStyles.Count > removeStyle)
+                panel.RowStyles.RemoveAt(removeStyle);
+
+            panel.RowCount--;
+        }
+
+        private void ReTotalBill(TableLayoutPanel table)
+        {
+            Panel tPanel = table.Tag as Panel;
+            Label subTotal = tPanel.Tag as Label;
+            Label vat = subTotal.Tag as Label;
+            Label discount = vat.Tag as Label;
+            Label gtotal = discount.Tag as Label;
+
+            float st = 0;
+            float vt = float.Parse(vat.Text.Split(':')[1].Substring(0,3));
+            float dt = float.Parse(discount.Text.Split(':')[1].Substring(0, 3));
+            float gt;
+
+            
+
+            for (int i = 1; i< table.RowCount; i++)
+            {
+                Control control = table.GetControlFromPosition(3,i);
+                float x = float.Parse(control.Text);
+                st += x;
+            }
+
+            gt = st;
+            gt += (st * vt / (float)100);
+            gt -= (st * dt / (float)100);
+
+            subTotal.Text = "Sub Total : " + st.ToString();
+            gtotal.Text = "Grand Total : "+ gt.ToString();
+        }
+
+        private void btn_cancel_frmDashboard_Click(object sender, EventArgs e)
+        {
+            if(activeButton != null)
+            {
+                
+                var confirmResult = MessageBox.Show("Are You Sure To CANCEL "+activeButton.Text+" Order ?", "Confirm To Cancel ["+activeButton.Text+"] Order", MessageBoxButtons.YesNo);
+
+                if (confirmResult == DialogResult.Yes)
+                {
+                    activeButton.Tag = null;
+                    if (pendingTables.Contains(activeButton))
+                        pendingTables.Remove(activeButton);
+                    activeButton.BackColor = Color.FromArgb(19, 7, 17);
+                    pnl_MenuContainer_frmDashboard.Controls.Remove(activeMenu);
+                    pnl_billContainer_frmDashboard.Controls.Remove(activeBill);
+                    activeButton = null;
+                    //pnl_MenuContainer_frmDashboard.Refresh();
+                    //pnl_billContainer_frmDashboard.Refresh();
+                }
+            }      
+        }
+
+        private void btn_pending_frmDashboard_Click(object sender, EventArgs e)
+        {
+            if (activeButton != null)
+            {
+                if(!pendingTables.Contains(activeButton))
+                    pendingTables.Add(activeButton);
+                btn_pending_frmDashboard.BackColor = Color.FromArgb(149, 34, 153);
+            }
+        }
+        private void cancelPendingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (pendingTables.Contains(activeButton))
+                pendingTables.Remove(activeButton);
+            btn_pending_frmDashboard.BackColor = Color.FromArgb(19,7,17);
+        }
+
+        
+        private void btn_checkout_frmDashboard_Click(object sender, EventArgs e)
+        {
+
+            //activeButton.BackColor = Color.FromArgb(57, 21, 51);
+            //if (pendingTables.Contains(activeButton))
+            //   pendingTables.Remove(activeButton);
+        }
+
+        private void btn_print_frmDashboard_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }

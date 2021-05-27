@@ -42,7 +42,7 @@ namespace RBS_Restaurant_Billing_System.Layer_Data
 
         #endregion
 
-        #region INSERT _Data_ IN USER
+        #region INSERT _Data_ INTO USER
         public bool Insert(Logic_User user)
         {
             bool success = false;

@@ -41,10 +41,11 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             this.btn_T8_frmDashboard = new System.Windows.Forms.Button();
             this.pnl_receipt_frmDashboard = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
+            this.btn_print_frmDashboard = new System.Windows.Forms.Button();
+            this.btn_pending_frmDashboard = new System.Windows.Forms.Button();
+            this.btn_cancel_frmDashboard = new System.Windows.Forms.Button();
+            this.btn_checkout_frmDashboard = new System.Windows.Forms.Button();
+            this.pnl_billContainer_frmDashboard = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_menu_frmDashboard = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -53,13 +54,15 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             this.rBSMenuBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rBS_MenuTableAdapter = new RBS_Restaurant_Billing_System.RBS_DatabaseDataSetTableAdapters.RBS_MenuTableAdapter();
             this.pnl_MenuContainer_frmDashboard = new System.Windows.Forms.Panel();
-            this.pnl_bill_frmDashboard = new System.Windows.Forms.Panel();
+            this.contextMenuStrip_pending = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cancelPendingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fpnl_frmDashboard.SuspendLayout();
             this.pnl_receipt_frmDashboard.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rBS_DatabaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rBSMenuBindingSource)).BeginInit();
+            this.contextMenuStrip_pending.SuspendLayout();
             this.SuspendLayout();
             // 
             // fpnl_frmDashboard
@@ -84,6 +87,7 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             // btn_T1_frmDashboard
             // 
             this.btn_T1_frmDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.btn_T1_frmDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_T1_frmDashboard.FlatAppearance.BorderSize = 0;
             this.btn_T1_frmDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(21)))), ((int)(((byte)(51)))));
             this.btn_T1_frmDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -100,6 +104,7 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             // btn_T2_frmDashboard
             // 
             this.btn_T2_frmDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.btn_T2_frmDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_T2_frmDashboard.FlatAppearance.BorderSize = 0;
             this.btn_T2_frmDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(21)))), ((int)(((byte)(51)))));
             this.btn_T2_frmDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -116,6 +121,7 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             // btn_T3_frmDashboard
             // 
             this.btn_T3_frmDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.btn_T3_frmDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_T3_frmDashboard.FlatAppearance.BorderSize = 0;
             this.btn_T3_frmDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(21)))), ((int)(((byte)(51)))));
             this.btn_T3_frmDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -132,6 +138,7 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             // btn_T4_frmDashboard
             // 
             this.btn_T4_frmDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.btn_T4_frmDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_T4_frmDashboard.FlatAppearance.BorderSize = 0;
             this.btn_T4_frmDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(21)))), ((int)(((byte)(51)))));
             this.btn_T4_frmDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -148,6 +155,7 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             // btn_T5_frmDashboard
             // 
             this.btn_T5_frmDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.btn_T5_frmDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_T5_frmDashboard.FlatAppearance.BorderSize = 0;
             this.btn_T5_frmDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(21)))), ((int)(((byte)(51)))));
             this.btn_T5_frmDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -164,6 +172,7 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             // btn_T6_frmDashboard
             // 
             this.btn_T6_frmDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.btn_T6_frmDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_T6_frmDashboard.FlatAppearance.BorderSize = 0;
             this.btn_T6_frmDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(21)))), ((int)(((byte)(51)))));
             this.btn_T6_frmDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -180,6 +189,7 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             // btn_T7_frmDashboard
             // 
             this.btn_T7_frmDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.btn_T7_frmDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_T7_frmDashboard.FlatAppearance.BorderSize = 0;
             this.btn_T7_frmDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(21)))), ((int)(((byte)(51)))));
             this.btn_T7_frmDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -196,6 +206,7 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             // btn_T8_frmDashboard
             // 
             this.btn_T8_frmDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.btn_T8_frmDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_T8_frmDashboard.FlatAppearance.BorderSize = 0;
             this.btn_T8_frmDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(21)))), ((int)(((byte)(51)))));
             this.btn_T8_frmDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -213,7 +224,7 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             // 
             this.pnl_receipt_frmDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.pnl_receipt_frmDashboard.Controls.Add(this.panel3);
-            this.pnl_receipt_frmDashboard.Controls.Add(this.pnl_bill_frmDashboard);
+            this.pnl_receipt_frmDashboard.Controls.Add(this.pnl_billContainer_frmDashboard);
             this.pnl_receipt_frmDashboard.Controls.Add(this.panel1);
             this.pnl_receipt_frmDashboard.Dock = System.Windows.Forms.DockStyle.Right;
             this.pnl_receipt_frmDashboard.Location = new System.Drawing.Point(564, 0);
@@ -224,80 +235,100 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(30)))), ((int)(((byte)(57)))));
-            this.panel3.Controls.Add(this.button10);
-            this.panel3.Controls.Add(this.button9);
-            this.panel3.Controls.Add(this.button12);
-            this.panel3.Controls.Add(this.button11);
+            this.panel3.Controls.Add(this.btn_print_frmDashboard);
+            this.panel3.Controls.Add(this.btn_pending_frmDashboard);
+            this.panel3.Controls.Add(this.btn_cancel_frmDashboard);
+            this.panel3.Controls.Add(this.btn_checkout_frmDashboard);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(0, 549);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(410, 62);
             this.panel3.TabIndex = 4;
             // 
-            // button9
+            // btn_print_frmDashboard
             // 
-            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(21)))), ((int)(((byte)(51)))));
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.button9.Location = new System.Drawing.Point(123, 13);
-            this.button9.Margin = new System.Windows.Forms.Padding(10);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(101, 39);
-            this.button9.TabIndex = 5;
-            this.button9.Text = "Pending";
-            this.button9.UseVisualStyleBackColor = false;
+            this.btn_print_frmDashboard.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_print_frmDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.btn_print_frmDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_print_frmDashboard.FlatAppearance.BorderSize = 0;
+            this.btn_print_frmDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(21)))), ((int)(((byte)(51)))));
+            this.btn_print_frmDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_print_frmDashboard.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_print_frmDashboard.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btn_print_frmDashboard.Location = new System.Drawing.Point(347, 13);
+            this.btn_print_frmDashboard.Margin = new System.Windows.Forms.Padding(10);
+            this.btn_print_frmDashboard.Name = "btn_print_frmDashboard";
+            this.btn_print_frmDashboard.Size = new System.Drawing.Size(63, 39);
+            this.btn_print_frmDashboard.TabIndex = 6;
+            this.btn_print_frmDashboard.Text = "Print";
+            this.btn_print_frmDashboard.UseVisualStyleBackColor = false;
+            this.btn_print_frmDashboard.Click += new System.EventHandler(this.btn_print_frmDashboard_Click);
             // 
-            // button12
+            // btn_pending_frmDashboard
             // 
-            this.button12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.button12.FlatAppearance.BorderSize = 0;
-            this.button12.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(21)))), ((int)(((byte)(51)))));
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button12.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.button12.Location = new System.Drawing.Point(7, 13);
-            this.button12.Margin = new System.Windows.Forms.Padding(10);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(101, 39);
-            this.button12.TabIndex = 4;
-            this.button12.Text = "Cancel";
-            this.button12.UseVisualStyleBackColor = false;
+            this.btn_pending_frmDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.btn_pending_frmDashboard.ContextMenuStrip = this.contextMenuStrip_pending;
+            this.btn_pending_frmDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_pending_frmDashboard.FlatAppearance.BorderSize = 0;
+            this.btn_pending_frmDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(21)))), ((int)(((byte)(51)))));
+            this.btn_pending_frmDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_pending_frmDashboard.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_pending_frmDashboard.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btn_pending_frmDashboard.Location = new System.Drawing.Point(123, 13);
+            this.btn_pending_frmDashboard.Margin = new System.Windows.Forms.Padding(10);
+            this.btn_pending_frmDashboard.Name = "btn_pending_frmDashboard";
+            this.btn_pending_frmDashboard.Size = new System.Drawing.Size(101, 39);
+            this.btn_pending_frmDashboard.TabIndex = 5;
+            this.btn_pending_frmDashboard.Text = "Pending";
+            this.btn_pending_frmDashboard.UseVisualStyleBackColor = false;
+            this.btn_pending_frmDashboard.Click += new System.EventHandler(this.btn_pending_frmDashboard_Click);
             // 
-            // button11
+            // btn_cancel_frmDashboard
             // 
-            this.button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.button11.FlatAppearance.BorderSize = 0;
-            this.button11.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(21)))), ((int)(((byte)(51)))));
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.button11.Location = new System.Drawing.Point(235, 13);
-            this.button11.Margin = new System.Windows.Forms.Padding(10);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(101, 39);
-            this.button11.TabIndex = 3;
-            this.button11.Text = "Checkout";
-            this.button11.UseVisualStyleBackColor = false;
+            this.btn_cancel_frmDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.btn_cancel_frmDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_cancel_frmDashboard.FlatAppearance.BorderSize = 0;
+            this.btn_cancel_frmDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(21)))), ((int)(((byte)(51)))));
+            this.btn_cancel_frmDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_cancel_frmDashboard.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cancel_frmDashboard.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btn_cancel_frmDashboard.Location = new System.Drawing.Point(7, 13);
+            this.btn_cancel_frmDashboard.Margin = new System.Windows.Forms.Padding(10);
+            this.btn_cancel_frmDashboard.Name = "btn_cancel_frmDashboard";
+            this.btn_cancel_frmDashboard.Size = new System.Drawing.Size(101, 39);
+            this.btn_cancel_frmDashboard.TabIndex = 4;
+            this.btn_cancel_frmDashboard.Text = "Cancel";
+            this.btn_cancel_frmDashboard.UseVisualStyleBackColor = false;
+            this.btn_cancel_frmDashboard.Click += new System.EventHandler(this.btn_cancel_frmDashboard_Click);
             // 
-            // button10
+            // btn_checkout_frmDashboard
             // 
-            this.button10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.button10.FlatAppearance.BorderSize = 0;
-            this.button10.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(21)))), ((int)(((byte)(51)))));
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.button10.Location = new System.Drawing.Point(347, 13);
-            this.button10.Margin = new System.Windows.Forms.Padding(10);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(63, 39);
-            this.button10.TabIndex = 6;
-            this.button10.Text = "Print";
-            this.button10.UseVisualStyleBackColor = false;
+            this.btn_checkout_frmDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.btn_checkout_frmDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_checkout_frmDashboard.FlatAppearance.BorderSize = 0;
+            this.btn_checkout_frmDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(21)))), ((int)(((byte)(51)))));
+            this.btn_checkout_frmDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_checkout_frmDashboard.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_checkout_frmDashboard.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btn_checkout_frmDashboard.Location = new System.Drawing.Point(235, 13);
+            this.btn_checkout_frmDashboard.Margin = new System.Windows.Forms.Padding(10);
+            this.btn_checkout_frmDashboard.Name = "btn_checkout_frmDashboard";
+            this.btn_checkout_frmDashboard.Size = new System.Drawing.Size(101, 39);
+            this.btn_checkout_frmDashboard.TabIndex = 3;
+            this.btn_checkout_frmDashboard.Text = "Checkout";
+            this.btn_checkout_frmDashboard.UseVisualStyleBackColor = false;
+            this.btn_checkout_frmDashboard.Click += new System.EventHandler(this.btn_checkout_frmDashboard_Click);
+            // 
+            // pnl_billContainer_frmDashboard
+            // 
+            this.pnl_billContainer_frmDashboard.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnl_billContainer_frmDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(30)))), ((int)(((byte)(57)))));
+            this.pnl_billContainer_frmDashboard.Location = new System.Drawing.Point(0, 56);
+            this.pnl_billContainer_frmDashboard.Name = "pnl_billContainer_frmDashboard";
+            this.pnl_billContainer_frmDashboard.Size = new System.Drawing.Size(410, 487);
+            this.pnl_billContainer_frmDashboard.TabIndex = 3;
             // 
             // panel1
             // 
@@ -317,6 +348,7 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             this.btn_menu_frmDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.btn_menu_frmDashboard.BackgroundImage = global::RBS_Restaurant_Billing_System.Properties.Resources.gear;
             this.btn_menu_frmDashboard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_menu_frmDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_menu_frmDashboard.FlatAppearance.BorderSize = 0;
             this.btn_menu_frmDashboard.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Violet;
             this.btn_menu_frmDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(21)))), ((int)(((byte)(51)))));
@@ -383,16 +415,23 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             this.pnl_MenuContainer_frmDashboard.Size = new System.Drawing.Size(558, 319);
             this.pnl_MenuContainer_frmDashboard.TabIndex = 5;
             // 
-            // pnl_bill_frmDashboard
+            // contextMenuStrip_pending
             // 
-            this.pnl_bill_frmDashboard.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnl_bill_frmDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(30)))), ((int)(((byte)(57)))));
-            this.pnl_bill_frmDashboard.Location = new System.Drawing.Point(0, 56);
-            this.pnl_bill_frmDashboard.Name = "pnl_bill_frmDashboard";
-            this.pnl_bill_frmDashboard.Size = new System.Drawing.Size(410, 487);
-            this.pnl_bill_frmDashboard.TabIndex = 3;
+            this.contextMenuStrip_pending.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(30)))), ((int)(((byte)(57)))));
+            this.contextMenuStrip_pending.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cancelPendingToolStripMenuItem});
+            this.contextMenuStrip_pending.Name = "contextMenuStrip_pending";
+            this.contextMenuStrip_pending.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.contextMenuStrip_pending.ShowImageMargin = false;
+            this.contextMenuStrip_pending.Size = new System.Drawing.Size(156, 48);
+            // 
+            // cancelPendingToolStripMenuItem
+            // 
+            this.cancelPendingToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.cancelPendingToolStripMenuItem.Name = "cancelPendingToolStripMenuItem";
+            this.cancelPendingToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.cancelPendingToolStripMenuItem.Text = "Cancel Pending";
+            this.cancelPendingToolStripMenuItem.Click += new System.EventHandler(this.cancelPendingToolStripMenuItem_Click);
             // 
             // Form_Dashboard
             // 
@@ -418,6 +457,7 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rBS_DatabaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rBSMenuBindingSource)).EndInit();
+            this.contextMenuStrip_pending.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -435,10 +475,10 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
         private System.Windows.Forms.Button btn_T8_frmDashboard;
         private System.Windows.Forms.Panel pnl_receipt_frmDashboard;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button btn_pending_frmDashboard;
+        private System.Windows.Forms.Button btn_cancel_frmDashboard;
+        private System.Windows.Forms.Button btn_checkout_frmDashboard;
+        private System.Windows.Forms.Button btn_print_frmDashboard;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lbl_Date_frmDashboard;
@@ -447,6 +487,8 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
         private RBS_DatabaseDataSetTableAdapters.RBS_MenuTableAdapter rBS_MenuTableAdapter;
         private System.Windows.Forms.Button btn_menu_frmDashboard;
         private System.Windows.Forms.Panel pnl_MenuContainer_frmDashboard;
-        private System.Windows.Forms.Panel pnl_bill_frmDashboard;
+        private System.Windows.Forms.Panel pnl_billContainer_frmDashboard;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip_pending;
+        private System.Windows.Forms.ToolStripMenuItem cancelPendingToolStripMenuItem;
     }
 }

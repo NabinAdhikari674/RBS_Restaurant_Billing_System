@@ -64,8 +64,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Layer_Data\Data_Menu.cs" />
+    <Compile Include="Layer_Data\Data_Transactions.cs" />
     <Compile Include="Layer_Data\Data_User.cs" />
     <Compile Include="Layer_Logic\Logic_Menu.cs" />
+    <Compile Include="Layer_Logic\Logic_Transactions.cs" />
     <Compile Include="Layer_Logic\Logic_User.cs" />
     <Compile Include="Layer_UI\AdminUI\Form_AdminDashboard.cs">
       <SubType>Form</SubType>
