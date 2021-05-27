@@ -81,6 +81,7 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
                 menuPanel.Dock = DockStyle.Fill;
                 menuPanel.Tag = "menuPanel";
                 BuildMenuCategories(menuPanel,button.Text);
+                BuildBillPanel(button.Text);
             }
             
             ShowMenuPanel(button.Tag as Panel);
@@ -131,6 +132,124 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             label.SendToBack();
             label.Dock = DockStyle.Top;
         }
+        
+        private void BuildBillPanel(string tablename)
+        {
+            Panel billPanel = new Panel();
+            pnl_bill_frmDashboard.Controls.Add(billPanel);
+            billPanel.Dock = DockStyle.Fill;
+            billPanel.Tag = "billPanel_" + tablename;
+            //billPanel.BackColor = Color.Red; 
+
+            Panel billIntro = new Panel();
+            billPanel.Controls.Add(billIntro);
+            billIntro.Dock = DockStyle.Top;
+            billIntro.BorderStyle = BorderStyle.FixedSingle;
+
+            Label businessName = new Label();
+            businessName.Text = "Foodie Seoul by Gautam";
+            businessName.Dock = DockStyle.Top;
+            businessName.TextAlign = ContentAlignment.MiddleCenter;
+
+            PictureBox businessLogo = new PictureBox();
+            businessLogo.Image = Properties.Resources.LOGO;
+            businessLogo.SizeMode = PictureBoxSizeMode.Zoom;
+            businessLogo.Dock = DockStyle.Fill;
+
+            Label businessTag = new Label();
+            businessTag.Text = "We Serve Better!";
+            businessTag.Dock = DockStyle.Bottom;
+            businessTag.TextAlign = ContentAlignment.MiddleCenter;
+            businessTag.Size = new Size(410, 20);
+            billIntro.Controls.Add(businessName);
+            billIntro.Controls.Add(businessTag);
+            billIntro.Controls.Add(businessLogo);
+
+            Panel billDetail = new Panel();
+            billPanel.Controls.Add(billDetail);
+            billDetail.BringToFront();
+            billDetail.Dock = DockStyle.Top;
+            billDetail.Size = new Size(410, 20);
+            Label billNumber = new Label();
+            billNumber.Text = "BillNumber";
+            billNumber.TextAlign = ContentAlignment.MiddleLeft;
+            billNumber.Dock = DockStyle.Left;
+            Label billTableName = new Label();
+            billTableName.Text = tablename;
+            billTableName.TextAlign = ContentAlignment.MiddleCenter;
+            billTableName.Dock = DockStyle.Fill;
+            Label billDate = new Label();
+            billDate.Text = "Bill Date";
+            billDate.TextAlign = ContentAlignment.MiddleRight;
+            billDate.Dock = DockStyle.Right;
+            billDetail.Controls.Add(billNumber);
+            billDetail.Controls.Add(billDate);
+            billDetail.Controls.Add(billTableName);
+
+
+
+            TableLayoutPanel billContent = new TableLayoutPanel();
+            billContent.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
+            billContent.ColumnCount = 4;
+            billContent.RowCount = 1;
+            billContent.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40F));
+            billContent.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
+            billContent.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
+            billContent.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
+
+            billContent.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            billContent.Controls.Add(new Label() { Text = "Items"}, 0, 0);
+            billContent.Controls.Add(new Label() { Text = "Rate" }, 1, 0);
+            billContent.Controls.Add(new Label() { Text = "Quantity" }, 2, 0);
+            billContent.Controls.Add(new Label() { Text = "Total" }, 3, 0);
+
+            billPanel.Controls.Add(billContent);
+            billContent.Dock = DockStyle.Top;
+            billContent.BringToFront();
+            billContent.AutoSize = true;
+            //billContent.BackColor = Color.Green;
+
+            Panel billTotal = new Panel();
+            billPanel.Controls.Add(billTotal);
+            billTotal.Dock = DockStyle.Bottom;
+            //billTotal.Size = new Size(400, 50);
+            Label subTotal = new Label();
+            subTotal.Text = "SubTotal";
+            subTotal.Dock = DockStyle.Top;
+            subTotal.TextAlign = ContentAlignment.MiddleRight;
+            Label subVAT = new Label();
+            subVAT.Text = "VAT";
+            subVAT.Dock = DockStyle.Top;
+            subVAT.TextAlign = ContentAlignment.MiddleRight;
+            Label discount = new Label();
+            discount.Text = "Discount";
+            discount.Dock = DockStyle.Top;
+            discount.TextAlign = ContentAlignment.MiddleRight;
+            Label total = new Label();
+            total.Text = "TOTAL";
+            total.Dock = DockStyle.Bottom;
+            total.TextAlign = ContentAlignment.MiddleRight;
+            Label cashier = new Label();
+            cashier.Text = "Cashier : Leonardo";
+            cashier.Dock = DockStyle.Left;
+            cashier.TextAlign = ContentAlignment.MiddleCenter;
+            cashier.AutoSize = true;
+            billTotal.Controls.Add(cashier);
+            billTotal.Controls.Add(discount);
+            billTotal.Controls.Add(subVAT);
+            billTotal.Controls.Add(subTotal);
+            billTotal.Controls.Add(total);
+
+
+            Label billFooter = new Label();
+            billFooter.Size = new Size(70, 20);
+            billFooter.BorderStyle = BorderStyle.FixedSingle;
+            billFooter.Text = "Thank Your For Eating with Us Foodie !";
+            billFooter.TextAlign = ContentAlignment.MiddleCenter;
+            billPanel.Controls.Add(billFooter);
+            billFooter.Dock = DockStyle.Bottom;
+        }
+        
         private void StyleCatButtons(Button bt)
         {
             bt.FlatStyle = FlatStyle.Flat;
@@ -145,6 +264,7 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             bt.Margin = new Padding(10);
             bt.Size = new Size(169, 45);
         }
+        
         private void StyleCatLabels(Label lbl)
         {
             lbl.FlatStyle = FlatStyle.Flat;
@@ -154,7 +274,9 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             lbl.Margin = new Padding(10);
             lbl.Size = new Size(169, 45);
         }
+       
         
+
         
         private void HandleCatButtonClicks(object sender, EventArgs e)
         {
@@ -176,6 +298,7 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             }
             ShowItemPanel(button.Tag as TableLayoutPanel);
         }
+        
         private void ShowItemPanel(Panel itemPanel)
         {
             foreach (Control ctrl in itemPanel.Parent.Controls)
@@ -187,6 +310,7 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             }
             itemPanel.Visible = true;
         }
+        
         private void BuildMenuItems(TableLayoutPanel itemPanel,string category)
         {
             itemPanel.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
@@ -243,6 +367,7 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
                 }
             }
         }
+        
         private void StyleItemButtons(Button bt)
         {
             bt.FlatStyle = FlatStyle.Flat;
@@ -256,6 +381,7 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             //bt.Margin = new Padding(10);
             bt.Size = new Size(50, 45);
         }
+        
         private void StyleItemLabels(Label lbl)
         {
             lbl.FlatStyle = FlatStyle.Flat;
