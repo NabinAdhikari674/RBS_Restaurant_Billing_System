@@ -15,12 +15,12 @@ namespace RBS_Restaurant_Billing_System.Layer_Data
     {
         static string dataConString = ConfigurationManager.ConnectionStrings["RBS_Restaurant_Billing_System.Properties.Settings.Database_RBSConnectionString"].ConnectionString;
 
-        #region SELECT _Data_ FROM USER
+        #region SELECT _Data_ FROM RBS_USERS
         public DataTable Select()
         {
             SqlConnection conn = new SqlConnection(dataConString);
             DataTable table = new DataTable();
-            string sql = "SELECT * FROM USERS";
+            string sql = "SELECT * FROM RBS_USERS";
 
             try
             {
@@ -47,7 +47,7 @@ namespace RBS_Restaurant_Billing_System.Layer_Data
         {
             bool success = false;
             SqlConnection conn = new SqlConnection(dataConString);
-            String sql = "INSERT INTO USERS (Username,Email,Password,Role,Phone,Address) ";
+            String sql = "INSERT INTO RBS_USERS (Username,Email,Password,Role,Phone,Address) ";
             sql += "VALUES (@Username,@Email,@Password,@Role,@Phone,@Address)";
 
             try
@@ -83,7 +83,7 @@ namespace RBS_Restaurant_Billing_System.Layer_Data
         {
             bool success = false;
             SqlConnection conn = new SqlConnection(dataConString);
-            string sql = "UPDATE USERS SET Username=@Username,Email=@Email,Password=@Password,Role=@Role,Phone=@Phone,Address=@Address ";
+            string sql = "UPDATE RBS_USERS SET Username=@Username,Email=@Email,Password=@Password,Role=@Role,Phone=@Phone,Address=@Address ";
             sql += "WHERE Id=@Id";
             try
             {
@@ -118,7 +118,7 @@ namespace RBS_Restaurant_Billing_System.Layer_Data
         {
             bool success = false;
             SqlConnection conn = new SqlConnection(dataConString);
-            string sql = "DELETE FROM USERS ";
+            string sql = "DELETE FROM RBS_USERS ";
             sql += "WHERE Id=@Id";
             try
             {

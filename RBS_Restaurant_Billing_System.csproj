@@ -63,7 +63,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Layer_Data\Data_Menu.cs" />
     <Compile Include="Layer_Data\Data_User.cs" />
+    <Compile Include="Layer_Logic\Logic_Menu.cs" />
     <Compile Include="Layer_Logic\Logic_User.cs" />
     <Compile Include="Layer_UI\AdminUI\Form_AdminDashboard.cs">
       <SubType>Form</SubType>
@@ -131,12 +133,6 @@
     <Compile Include="Layer_UI\Form_Login.Designer.cs">
       <DependentUpon>Form_Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Layer_UI\UserControl_OrderMenu.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Layer_UI\UserControl_OrderMenu.Designer.cs">
-      <DependentUpon>UserControl_OrderMenu.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RBS_DatabaseDataSet.Designer.cs">
@@ -176,9 +172,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Layer_UI\Form_Login.resx">
       <DependentUpon>Form_Login.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Layer_UI\UserControl_OrderMenu.resx">
-      <DependentUpon>UserControl_OrderMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

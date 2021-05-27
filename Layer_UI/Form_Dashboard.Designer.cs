@@ -39,7 +39,6 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             this.btn_T6_frmDashboard = new System.Windows.Forms.Button();
             this.btn_T7_frmDashboard = new System.Windows.Forms.Button();
             this.btn_T8_frmDashboard = new System.Windows.Forms.Button();
-            this.pnl_MenuContainer_frmDashboard = new System.Windows.Forms.Panel();
             this.pnl_receipt_frmDashboard = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button9 = new System.Windows.Forms.Button();
@@ -54,10 +53,10 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             this.rBS_DatabaseDataSet = new RBS_Restaurant_Billing_System.RBS_DatabaseDataSet();
             this.rBSMenuBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rBS_MenuTableAdapter = new RBS_Restaurant_Billing_System.RBS_DatabaseDataSetTableAdapters.RBS_MenuTableAdapter();
+            this.pnl_MenuContainer_frmDashboard = new System.Windows.Forms.Panel();
             this.fpnl_frmDashboard.SuspendLayout();
             this.pnl_receipt_frmDashboard.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rBS_DatabaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rBSMenuBindingSource)).BeginInit();
@@ -210,18 +209,6 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             this.btn_T8_frmDashboard.Text = "Table 8";
             this.btn_T8_frmDashboard.UseVisualStyleBackColor = false;
             // 
-            // pnl_MenuContainer_frmDashboard
-            // 
-            this.pnl_MenuContainer_frmDashboard.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnl_MenuContainer_frmDashboard.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.pnl_MenuContainer_frmDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(30)))), ((int)(((byte)(57)))));
-            this.pnl_MenuContainer_frmDashboard.Location = new System.Drawing.Point(0, 292);
-            this.pnl_MenuContainer_frmDashboard.Name = "pnl_MenuContainer_frmDashboard";
-            this.pnl_MenuContainer_frmDashboard.Size = new System.Drawing.Size(558, 341);
-            this.pnl_MenuContainer_frmDashboard.TabIndex = 5;
-            // 
             // pnl_receipt_frmDashboard
             // 
             this.pnl_receipt_frmDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
@@ -237,6 +224,7 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(30)))), ((int)(((byte)(57)))));
+            this.panel3.Controls.Add(this.button10);
             this.panel3.Controls.Add(this.button9);
             this.panel3.Controls.Add(this.button12);
             this.panel3.Controls.Add(this.button11);
@@ -254,7 +242,7 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button9.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.button9.Location = new System.Drawing.Point(153, 13);
+            this.button9.Location = new System.Drawing.Point(123, 13);
             this.button9.Margin = new System.Windows.Forms.Padding(10);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(101, 39);
@@ -270,7 +258,7 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button12.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button12.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.button12.Location = new System.Drawing.Point(10, 13);
+            this.button12.Location = new System.Drawing.Point(7, 13);
             this.button12.Margin = new System.Windows.Forms.Padding(10);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(101, 39);
@@ -286,7 +274,7 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button11.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button11.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.button11.Location = new System.Drawing.Point(290, 13);
+            this.button11.Location = new System.Drawing.Point(235, 13);
             this.button11.Margin = new System.Windows.Forms.Padding(10);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(101, 39);
@@ -300,7 +288,6 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(30)))), ((int)(((byte)(57)))));
-            this.panel2.Controls.Add(this.button10);
             this.panel2.Location = new System.Drawing.Point(0, 56);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(410, 487);
@@ -315,10 +302,10 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button10.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button10.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.button10.Location = new System.Drawing.Point(347, 447);
+            this.button10.Location = new System.Drawing.Point(347, 13);
             this.button10.Margin = new System.Windows.Forms.Padding(10);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(63, 33);
+            this.button10.Size = new System.Drawing.Size(63, 39);
             this.button10.TabIndex = 6;
             this.button10.Text = "Print";
             this.button10.UseVisualStyleBackColor = false;
@@ -347,7 +334,7 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             this.btn_menu_frmDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_menu_frmDashboard.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_menu_frmDashboard.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btn_menu_frmDashboard.Location = new System.Drawing.Point(0, 9);
+            this.btn_menu_frmDashboard.Location = new System.Drawing.Point(2, 9);
             this.btn_menu_frmDashboard.Margin = new System.Windows.Forms.Padding(10);
             this.btn_menu_frmDashboard.Name = "btn_menu_frmDashboard";
             this.btn_menu_frmDashboard.Size = new System.Drawing.Size(31, 25);
@@ -361,7 +348,7 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(37, 9);
+            this.label2.Location = new System.Drawing.Point(36, 9);
             this.label2.Name = "label2";
             this.label2.Padding = new System.Windows.Forms.Padding(3);
             this.label2.Size = new System.Drawing.Size(117, 25);
@@ -374,7 +361,7 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             this.lbl_Date_frmDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.lbl_Date_frmDashboard.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Date_frmDashboard.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lbl_Date_frmDashboard.Location = new System.Drawing.Point(160, 9);
+            this.lbl_Date_frmDashboard.Location = new System.Drawing.Point(156, 9);
             this.lbl_Date_frmDashboard.Name = "lbl_Date_frmDashboard";
             this.lbl_Date_frmDashboard.Padding = new System.Windows.Forms.Padding(3);
             this.lbl_Date_frmDashboard.Size = new System.Drawing.Size(98, 25);
@@ -394,6 +381,18 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             // rBS_MenuTableAdapter
             // 
             this.rBS_MenuTableAdapter.ClearBeforeFill = true;
+            // 
+            // pnl_MenuContainer_frmDashboard
+            // 
+            this.pnl_MenuContainer_frmDashboard.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnl_MenuContainer_frmDashboard.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.pnl_MenuContainer_frmDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(30)))), ((int)(((byte)(57)))));
+            this.pnl_MenuContainer_frmDashboard.Location = new System.Drawing.Point(0, 292);
+            this.pnl_MenuContainer_frmDashboard.Name = "pnl_MenuContainer_frmDashboard";
+            this.pnl_MenuContainer_frmDashboard.Size = new System.Drawing.Size(558, 319);
+            this.pnl_MenuContainer_frmDashboard.TabIndex = 5;
             // 
             // Form_Dashboard
             // 
@@ -415,7 +414,6 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             this.fpnl_frmDashboard.ResumeLayout(false);
             this.pnl_receipt_frmDashboard.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rBS_DatabaseDataSet)).EndInit();
@@ -435,7 +433,6 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
         private System.Windows.Forms.Button btn_T6_frmDashboard;
         private System.Windows.Forms.Button btn_T7_frmDashboard;
         private System.Windows.Forms.Button btn_T8_frmDashboard;
-        private System.Windows.Forms.Panel pnl_MenuContainer_frmDashboard;
         private System.Windows.Forms.Panel pnl_receipt_frmDashboard;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button button9;
@@ -450,5 +447,6 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
         private System.Windows.Forms.BindingSource rBSMenuBindingSource;
         private RBS_DatabaseDataSetTableAdapters.RBS_MenuTableAdapter rBS_MenuTableAdapter;
         private System.Windows.Forms.Button btn_menu_frmDashboard;
+        private System.Windows.Forms.Panel pnl_MenuContainer_frmDashboard;
     }
 }
