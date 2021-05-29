@@ -30,6 +30,7 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
         private void InitializeComponent()
         {
             this.panel_Footer_AdminDashboard = new System.Windows.Forms.Panel();
+            this.btn_Dashboard_frmAD = new System.Windows.Forms.Button();
             this.btn_About_frmAD = new System.Windows.Forms.Button();
             this.btn_More_AD = new System.Windows.Forms.Button();
             this.btn_Transactions_AD = new System.Windows.Forms.Button();
@@ -54,6 +55,7 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             // 
             this.panel_Footer_AdminDashboard.AutoScroll = true;
             this.panel_Footer_AdminDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.panel_Footer_AdminDashboard.Controls.Add(this.btn_Dashboard_frmAD);
             this.panel_Footer_AdminDashboard.Controls.Add(this.btn_About_frmAD);
             this.panel_Footer_AdminDashboard.Controls.Add(this.btn_More_AD);
             this.panel_Footer_AdminDashboard.Controls.Add(this.btn_Transactions_AD);
@@ -67,6 +69,27 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             this.panel_Footer_AdminDashboard.Name = "panel_Footer_AdminDashboard";
             this.panel_Footer_AdminDashboard.Size = new System.Drawing.Size(185, 561);
             this.panel_Footer_AdminDashboard.TabIndex = 1;
+            // 
+            // btn_Dashboard_frmAD
+            // 
+            this.btn_Dashboard_frmAD.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Dashboard_frmAD.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_Dashboard_frmAD.FlatAppearance.BorderSize = 0;
+            this.btn_Dashboard_frmAD.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(30)))), ((int)(((byte)(51)))));
+            this.btn_Dashboard_frmAD.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(20)))), ((int)(((byte)(50)))));
+            this.btn_Dashboard_frmAD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Dashboard_frmAD.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btn_Dashboard_frmAD.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btn_Dashboard_frmAD.Location = new System.Drawing.Point(0, 541);
+            this.btn_Dashboard_frmAD.Name = "btn_Dashboard_frmAD";
+            this.btn_Dashboard_frmAD.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btn_Dashboard_frmAD.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btn_Dashboard_frmAD.Size = new System.Drawing.Size(168, 45);
+            this.btn_Dashboard_frmAD.TabIndex = 10;
+            this.btn_Dashboard_frmAD.Text = "Dashboard";
+            this.btn_Dashboard_frmAD.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Dashboard_frmAD.UseVisualStyleBackColor = false;
+            this.btn_Dashboard_frmAD.Click += new System.EventHandler(this.btn_Dashboard_frmAD_Click);
             // 
             // btn_About_frmAD
             // 
@@ -82,7 +105,7 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             this.btn_About_frmAD.Name = "btn_About_frmAD";
             this.btn_About_frmAD.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btn_About_frmAD.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btn_About_frmAD.Size = new System.Drawing.Size(185, 45);
+            this.btn_About_frmAD.Size = new System.Drawing.Size(168, 45);
             this.btn_About_frmAD.TabIndex = 8;
             this.btn_About_frmAD.Text = "About";
             this.btn_About_frmAD.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -103,7 +126,7 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             this.btn_More_AD.Name = "btn_More_AD";
             this.btn_More_AD.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btn_More_AD.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btn_More_AD.Size = new System.Drawing.Size(185, 45);
+            this.btn_More_AD.Size = new System.Drawing.Size(168, 45);
             this.btn_More_AD.TabIndex = 7;
             this.btn_More_AD.Text = "More";
             this.btn_More_AD.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -124,7 +147,7 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             this.btn_Transactions_AD.Name = "btn_Transactions_AD";
             this.btn_Transactions_AD.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btn_Transactions_AD.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btn_Transactions_AD.Size = new System.Drawing.Size(185, 45);
+            this.btn_Transactions_AD.Size = new System.Drawing.Size(168, 45);
             this.btn_Transactions_AD.TabIndex = 5;
             this.btn_Transactions_AD.Text = "Transactions";
             this.btn_Transactions_AD.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -138,7 +161,7 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             this.sbm_btn_Products_AD.Dock = System.Windows.Forms.DockStyle.Top;
             this.sbm_btn_Products_AD.Location = new System.Drawing.Point(0, 324);
             this.sbm_btn_Products_AD.Name = "sbm_btn_Products_AD";
-            this.sbm_btn_Products_AD.Size = new System.Drawing.Size(185, 82);
+            this.sbm_btn_Products_AD.Size = new System.Drawing.Size(168, 82);
             this.sbm_btn_Products_AD.TabIndex = 4;
             // 
             // btn_pMgmt_frmAD
@@ -152,7 +175,7 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             this.btn_pMgmt_frmAD.Location = new System.Drawing.Point(0, 40);
             this.btn_pMgmt_frmAD.Name = "btn_pMgmt_frmAD";
             this.btn_pMgmt_frmAD.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btn_pMgmt_frmAD.Size = new System.Drawing.Size(185, 40);
+            this.btn_pMgmt_frmAD.Size = new System.Drawing.Size(168, 40);
             this.btn_pMgmt_frmAD.TabIndex = 1;
             this.btn_pMgmt_frmAD.Text = "Product Manager";
             this.btn_pMgmt_frmAD.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -170,7 +193,7 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             this.btn_viewProducts_frmAD.Location = new System.Drawing.Point(0, 0);
             this.btn_viewProducts_frmAD.Name = "btn_viewProducts_frmAD";
             this.btn_viewProducts_frmAD.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btn_viewProducts_frmAD.Size = new System.Drawing.Size(185, 40);
+            this.btn_viewProducts_frmAD.Size = new System.Drawing.Size(168, 40);
             this.btn_viewProducts_frmAD.TabIndex = 0;
             this.btn_viewProducts_frmAD.Text = "View Products";
             this.btn_viewProducts_frmAD.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -191,7 +214,7 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             this.btn_Product_AD.Name = "btn_Product_AD";
             this.btn_Product_AD.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btn_Product_AD.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btn_Product_AD.Size = new System.Drawing.Size(185, 45);
+            this.btn_Product_AD.Size = new System.Drawing.Size(168, 45);
             this.btn_Product_AD.TabIndex = 3;
             this.btn_Product_AD.Text = "Products";
             this.btn_Product_AD.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -206,7 +229,7 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             this.sbm_btn_User_AD.Dock = System.Windows.Forms.DockStyle.Top;
             this.sbm_btn_User_AD.Location = new System.Drawing.Point(0, 156);
             this.sbm_btn_User_AD.Name = "sbm_btn_User_AD";
-            this.sbm_btn_User_AD.Size = new System.Drawing.Size(185, 123);
+            this.sbm_btn_User_AD.Size = new System.Drawing.Size(168, 123);
             this.sbm_btn_User_AD.TabIndex = 2;
             // 
             // btn_removeUsers_frmAD
@@ -220,7 +243,7 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             this.btn_removeUsers_frmAD.Location = new System.Drawing.Point(0, 80);
             this.btn_removeUsers_frmAD.Name = "btn_removeUsers_frmAD";
             this.btn_removeUsers_frmAD.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btn_removeUsers_frmAD.Size = new System.Drawing.Size(185, 40);
+            this.btn_removeUsers_frmAD.Size = new System.Drawing.Size(168, 40);
             this.btn_removeUsers_frmAD.TabIndex = 2;
             this.btn_removeUsers_frmAD.Text = "Remove Users";
             this.btn_removeUsers_frmAD.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -238,7 +261,7 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             this.btn_AddUsers_frmAD.Location = new System.Drawing.Point(0, 40);
             this.btn_AddUsers_frmAD.Name = "btn_AddUsers_frmAD";
             this.btn_AddUsers_frmAD.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btn_AddUsers_frmAD.Size = new System.Drawing.Size(185, 40);
+            this.btn_AddUsers_frmAD.Size = new System.Drawing.Size(168, 40);
             this.btn_AddUsers_frmAD.TabIndex = 1;
             this.btn_AddUsers_frmAD.Text = "Add/ Update Users";
             this.btn_AddUsers_frmAD.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -256,7 +279,7 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             this.btn_viewUsers_frmAD.Location = new System.Drawing.Point(0, 0);
             this.btn_viewUsers_frmAD.Name = "btn_viewUsers_frmAD";
             this.btn_viewUsers_frmAD.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btn_viewUsers_frmAD.Size = new System.Drawing.Size(185, 40);
+            this.btn_viewUsers_frmAD.Size = new System.Drawing.Size(168, 40);
             this.btn_viewUsers_frmAD.TabIndex = 0;
             this.btn_viewUsers_frmAD.Text = "View Users";
             this.btn_viewUsers_frmAD.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -277,7 +300,7 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             this.btn_Users_AD.Name = "btn_Users_AD";
             this.btn_Users_AD.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btn_Users_AD.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btn_Users_AD.Size = new System.Drawing.Size(185, 45);
+            this.btn_Users_AD.Size = new System.Drawing.Size(168, 45);
             this.btn_Users_AD.TabIndex = 1;
             this.btn_Users_AD.Text = "Users";
             this.btn_Users_AD.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -291,7 +314,7 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             this.pictureBox_Logo_AdminDashboard.Image = global::RBS_Restaurant_Billing_System.Properties.Resources.LOGO;
             this.pictureBox_Logo_AdminDashboard.Location = new System.Drawing.Point(0, 0);
             this.pictureBox_Logo_AdminDashboard.Name = "pictureBox_Logo_AdminDashboard";
-            this.pictureBox_Logo_AdminDashboard.Size = new System.Drawing.Size(185, 111);
+            this.pictureBox_Logo_AdminDashboard.Size = new System.Drawing.Size(168, 111);
             this.pictureBox_Logo_AdminDashboard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox_Logo_AdminDashboard.TabIndex = 0;
             this.pictureBox_Logo_AdminDashboard.TabStop = false;
@@ -303,6 +326,7 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             this.pnl_Container_AD.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnl_Container_AD.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.pnl_Container_AD.Location = new System.Drawing.Point(185, 0);
+            this.pnl_Container_AD.MinimumSize = new System.Drawing.Size(729, 561);
             this.pnl_Container_AD.Name = "pnl_Container_AD";
             this.pnl_Container_AD.Size = new System.Drawing.Size(729, 561);
             this.pnl_Container_AD.TabIndex = 2;
@@ -347,5 +371,6 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
         private System.Windows.Forms.Button btn_Users_AD;
         private System.Windows.Forms.PictureBox pictureBox_Logo_AdminDashboard;
         private System.Windows.Forms.Panel pnl_Container_AD;
+        private System.Windows.Forms.Button btn_Dashboard_frmAD;
     }
 }

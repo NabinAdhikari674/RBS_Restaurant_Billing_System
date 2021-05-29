@@ -21,12 +21,12 @@ namespace RBS_Restaurant_Billing_System.Layer_Data
             bool success = false;
             SqlConnection conn = new SqlConnection(dataConString);
             String sql = "INSERT INTO RBS_TRANSACTIONS (Cashier,Amount,Items) ";
-            sql += "VALUES (@Cashier,@Amount,@Items)";
+            sql += "VALUES ((SELECT Username from RBS_USERS WHERE Username=@Username),@Amount,@Items)";
 
             try
             {
                 SqlCommand cmd = new SqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@Cashier", transaction.Cashier);
+                cmd.Parameters.AddWithValue("@Username", transaction.Cashier);
                 cmd.Parameters.AddWithValue("@Amount", transaction.Amount);
                 cmd.Parameters.AddWithValue("@Items", transaction.Items);
 

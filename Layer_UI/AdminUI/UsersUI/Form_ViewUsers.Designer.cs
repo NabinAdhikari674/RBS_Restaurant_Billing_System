@@ -145,7 +145,6 @@ namespace RBS_Restaurant_Billing_System.Layer_UI.AdminUI.UsersUI
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -240,6 +239,7 @@ namespace RBS_Restaurant_Billing_System.Layer_UI.AdminUI.UsersUI
             this.dataGridViewTextBoxColumn4.HeaderText = "Password";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Visible = false;
             // 
             // dataGridViewTextBoxColumn5
             // 

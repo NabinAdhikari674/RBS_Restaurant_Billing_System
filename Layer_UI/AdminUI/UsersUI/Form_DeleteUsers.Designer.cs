@@ -251,6 +251,7 @@ namespace RBS_Restaurant_Billing_System.Layer_UI.AdminUI.UsersUI
             this.dataGridViewTextBoxColumn4.HeaderText = "Password";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Visible = false;
             // 
             // dataGridViewTextBoxColumn5
             // 

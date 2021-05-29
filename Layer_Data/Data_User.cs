@@ -13,7 +13,7 @@ namespace RBS_Restaurant_Billing_System.Layer_Data
 {
     class Data_User
     {
-        static string dataConString = ConfigurationManager.ConnectionStrings["RBS_Restaurant_Billing_System.Properties.Settings.Database_RBSConnectionString"].ConnectionString;
+        static string dataConString = ConfigurationManager.ConnectionStrings["RBS_Restaurant_Billing_System.Properties.Settings.RBS_DatabaseConnectionString"].ConnectionString;
 
         #region SELECT _Data_ FROM RBS_USERS
         public DataTable Select()
@@ -141,5 +141,61 @@ namespace RBS_Restaurant_Billing_System.Layer_Data
             return success;
         }
         #endregion
+
+        #region SELECT USERNAME WHERE USERNAME = _DATA_
+        public DataTable SelectUsername(Logic_User user)
+        {
+            SqlConnection conn = new SqlConnection(dataConString);
+            DataTable table = new DataTable();
+            string sql = "SELECT Username FROM RBS_USERS WHERE Username=@Username";
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@Username", user.Username);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                conn.Open();
+                adapter.Fill(table);
+            }
+            catch (Exception exp)
+            {
+                MessageBox.Show(exp.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return table;
+        }
+
+        #endregion
+
+        #region FROM RBS_USERS WHERE USERNAME = _DATA_
+        public DataTable SelectUser(Logic_User user)
+        {
+            SqlConnection conn = new SqlConnection(dataConString);
+            DataTable table = new DataTable();
+            string sql = "SELECT Username,Password,Role FROM RBS_USERS WHERE Username=@Username";
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@Username", user.Username);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                conn.Open();
+                adapter.Fill(table);
+            }
+            catch (Exception exp)
+            {
+                MessageBox.Show(exp.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return table;
+        }
+        #endregion
+
     }
 }

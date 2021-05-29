@@ -30,6 +30,7 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Dashboard));
             this.fpnl_frmDashboard = new System.Windows.Forms.FlowLayoutPanel();
             this.btn_T1_frmDashboard = new System.Windows.Forms.Button();
             this.btn_T2_frmDashboard = new System.Windows.Forms.Button();
@@ -43,26 +44,28 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             this.panel3 = new System.Windows.Forms.Panel();
             this.btn_print_frmDashboard = new System.Windows.Forms.Button();
             this.btn_pending_frmDashboard = new System.Windows.Forms.Button();
+            this.contextMenuStrip_pending = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cancelPendingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_cancel_frmDashboard = new System.Windows.Forms.Button();
             this.btn_checkout_frmDashboard = new System.Windows.Forms.Button();
             this.pnl_billContainer_frmDashboard = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_menu_frmDashboard = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbl_username_frmDashboard = new System.Windows.Forms.Label();
             this.lbl_Date_frmDashboard = new System.Windows.Forms.Label();
             this.rBS_DatabaseDataSet = new RBS_Restaurant_Billing_System.RBS_DatabaseDataSet();
             this.rBSMenuBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rBS_MenuTableAdapter = new RBS_Restaurant_Billing_System.RBS_DatabaseDataSetTableAdapters.RBS_MenuTableAdapter();
             this.pnl_MenuContainer_frmDashboard = new System.Windows.Forms.Panel();
-            this.contextMenuStrip_pending = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.cancelPendingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.printDocument = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
             this.fpnl_frmDashboard.SuspendLayout();
             this.pnl_receipt_frmDashboard.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.contextMenuStrip_pending.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rBS_DatabaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rBSMenuBindingSource)).BeginInit();
-            this.contextMenuStrip_pending.SuspendLayout();
             this.SuspendLayout();
             // 
             // fpnl_frmDashboard
@@ -262,7 +265,6 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             this.btn_print_frmDashboard.TabIndex = 6;
             this.btn_print_frmDashboard.Text = "Print";
             this.btn_print_frmDashboard.UseVisualStyleBackColor = false;
-            this.btn_print_frmDashboard.Click += new System.EventHandler(this.btn_print_frmDashboard_Click);
             // 
             // btn_pending_frmDashboard
             // 
@@ -282,6 +284,24 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             this.btn_pending_frmDashboard.Text = "Pending";
             this.btn_pending_frmDashboard.UseVisualStyleBackColor = false;
             this.btn_pending_frmDashboard.Click += new System.EventHandler(this.btn_pending_frmDashboard_Click);
+            // 
+            // contextMenuStrip_pending
+            // 
+            this.contextMenuStrip_pending.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(30)))), ((int)(((byte)(57)))));
+            this.contextMenuStrip_pending.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cancelPendingToolStripMenuItem});
+            this.contextMenuStrip_pending.Name = "contextMenuStrip_pending";
+            this.contextMenuStrip_pending.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.contextMenuStrip_pending.ShowImageMargin = false;
+            this.contextMenuStrip_pending.Size = new System.Drawing.Size(133, 26);
+            // 
+            // cancelPendingToolStripMenuItem
+            // 
+            this.cancelPendingToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.cancelPendingToolStripMenuItem.Name = "cancelPendingToolStripMenuItem";
+            this.cancelPendingToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.cancelPendingToolStripMenuItem.Text = "Cancel Pending";
+            this.cancelPendingToolStripMenuItem.Click += new System.EventHandler(this.cancelPendingToolStripMenuItem_Click);
             // 
             // btn_cancel_frmDashboard
             // 
@@ -334,7 +354,7 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(30)))), ((int)(((byte)(57)))));
             this.panel1.Controls.Add(this.btn_menu_frmDashboard);
-            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.lbl_username_frmDashboard);
             this.panel1.Controls.Add(this.lbl_Date_frmDashboard);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -362,19 +382,20 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             this.btn_menu_frmDashboard.TabIndex = 7;
             this.btn_menu_frmDashboard.Text = "-";
             this.btn_menu_frmDashboard.UseVisualStyleBackColor = false;
+            this.btn_menu_frmDashboard.Click += new System.EventHandler(this.btn_menu_frmDashboard_Click);
             // 
-            // label2
+            // lbl_username_frmDashboard
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(36, 9);
-            this.label2.Name = "label2";
-            this.label2.Padding = new System.Windows.Forms.Padding(3);
-            this.label2.Size = new System.Drawing.Size(117, 25);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "User : Leonardo";
+            this.lbl_username_frmDashboard.AutoSize = true;
+            this.lbl_username_frmDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.lbl_username_frmDashboard.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_username_frmDashboard.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lbl_username_frmDashboard.Location = new System.Drawing.Point(36, 9);
+            this.lbl_username_frmDashboard.Name = "lbl_username_frmDashboard";
+            this.lbl_username_frmDashboard.Padding = new System.Windows.Forms.Padding(3);
+            this.lbl_username_frmDashboard.Size = new System.Drawing.Size(117, 25);
+            this.lbl_username_frmDashboard.TabIndex = 0;
+            this.lbl_username_frmDashboard.Text = "User : Leonardo";
             // 
             // lbl_Date_frmDashboard
             // 
@@ -415,23 +436,19 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             this.pnl_MenuContainer_frmDashboard.Size = new System.Drawing.Size(558, 319);
             this.pnl_MenuContainer_frmDashboard.TabIndex = 5;
             // 
-            // contextMenuStrip_pending
+            // printDocument
             // 
-            this.contextMenuStrip_pending.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(30)))), ((int)(((byte)(57)))));
-            this.contextMenuStrip_pending.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cancelPendingToolStripMenuItem});
-            this.contextMenuStrip_pending.Name = "contextMenuStrip_pending";
-            this.contextMenuStrip_pending.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.contextMenuStrip_pending.ShowImageMargin = false;
-            this.contextMenuStrip_pending.Size = new System.Drawing.Size(156, 48);
+            this.printDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument_PrintPage);
             // 
-            // cancelPendingToolStripMenuItem
+            // printPreviewDialog
             // 
-            this.cancelPendingToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.cancelPendingToolStripMenuItem.Name = "cancelPendingToolStripMenuItem";
-            this.cancelPendingToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
-            this.cancelPendingToolStripMenuItem.Text = "Cancel Pending";
-            this.cancelPendingToolStripMenuItem.Click += new System.EventHandler(this.cancelPendingToolStripMenuItem_Click);
+            this.printPreviewDialog.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog.Enabled = true;
+            this.printPreviewDialog.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog.Icon")));
+            this.printPreviewDialog.Name = "printPreviewDialog";
+            this.printPreviewDialog.Visible = false;
             // 
             // Form_Dashboard
             // 
@@ -453,11 +470,11 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             this.fpnl_frmDashboard.ResumeLayout(false);
             this.pnl_receipt_frmDashboard.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            this.contextMenuStrip_pending.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rBS_DatabaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rBSMenuBindingSource)).EndInit();
-            this.contextMenuStrip_pending.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -480,7 +497,7 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
         private System.Windows.Forms.Button btn_checkout_frmDashboard;
         private System.Windows.Forms.Button btn_print_frmDashboard;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbl_username_frmDashboard;
         private System.Windows.Forms.Label lbl_Date_frmDashboard;
         private RBS_DatabaseDataSet rBS_DatabaseDataSet;
         private System.Windows.Forms.BindingSource rBSMenuBindingSource;
@@ -490,5 +507,7 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
         private System.Windows.Forms.Panel pnl_billContainer_frmDashboard;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip_pending;
         private System.Windows.Forms.ToolStripMenuItem cancelPendingToolStripMenuItem;
+        private System.Drawing.Printing.PrintDocument printDocument;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog;
     }
 }

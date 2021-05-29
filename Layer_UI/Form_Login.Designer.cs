@@ -35,7 +35,7 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             this.pnl_Pass_frmLoginScreen = new System.Windows.Forms.Panel();
             this.txtB_pass_frmLoginScreen = new System.Windows.Forms.TextBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.chkB_adminPnl_frmLoginScreen = new System.Windows.Forms.CheckBox();
             this.btn_login_frmLoginScreen = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnl_User_frmLoginScreen.SuspendLayout();
@@ -112,18 +112,18 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
             // 
-            // checkBox1
+            // chkB_adminPnl_frmLoginScreen
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.checkBox1.Location = new System.Drawing.Point(166, 388);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(92, 17);
-            this.checkBox1.TabIndex = 6;
-            this.checkBox1.Text = "Remember Me";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chkB_adminPnl_frmLoginScreen.AutoSize = true;
+            this.chkB_adminPnl_frmLoginScreen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.chkB_adminPnl_frmLoginScreen.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkB_adminPnl_frmLoginScreen.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.chkB_adminPnl_frmLoginScreen.Location = new System.Drawing.Point(156, 387);
+            this.chkB_adminPnl_frmLoginScreen.Name = "chkB_adminPnl_frmLoginScreen";
+            this.chkB_adminPnl_frmLoginScreen.Size = new System.Drawing.Size(123, 17);
+            this.chkB_adminPnl_frmLoginScreen.TabIndex = 6;
+            this.chkB_adminPnl_frmLoginScreen.Text = "Login to Admin Panel";
+            this.chkB_adminPnl_frmLoginScreen.UseVisualStyleBackColor = true;
             // 
             // btn_login_frmLoginScreen
             // 
@@ -138,6 +138,7 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             this.btn_login_frmLoginScreen.TabIndex = 5;
             this.btn_login_frmLoginScreen.Text = "Login";
             this.btn_login_frmLoginScreen.UseVisualStyleBackColor = false;
+            this.btn_login_frmLoginScreen.Click += new System.EventHandler(this.btn_login_frmLoginScreen_Click);
             // 
             // pictureBox1
             // 
@@ -156,7 +157,7 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.ClientSize = new System.Drawing.Size(441, 519);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.chkB_adminPnl_frmLoginScreen);
             this.Controls.Add(this.btn_login_frmLoginScreen);
             this.Controls.Add(this.pnl_Pass_frmLoginScreen);
             this.Controls.Add(this.pnl_User_frmLoginScreen);
@@ -190,7 +191,7 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
         private System.Windows.Forms.Panel pnl_Pass_frmLoginScreen;
         private System.Windows.Forms.TextBox txtB_pass_frmLoginScreen;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox chkB_adminPnl_frmLoginScreen;
         private System.Windows.Forms.Button btn_login_frmLoginScreen;
     }
 }

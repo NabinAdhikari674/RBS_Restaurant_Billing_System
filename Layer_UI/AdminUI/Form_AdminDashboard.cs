@@ -18,10 +18,14 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
     public partial class Form_AdminDashboard : Form
     {
         private Form activeForm = null;
-        public Form_AdminDashboard()
+        static DataTable loggedUser;
+        public Form_AdminDashboard(DataTable user)
         {
             InitializeComponent();
             hideAllSubMenus();
+            btn_Dashboard_frmAD.SendToBack();
+            pictureBox_Logo_AdminDashboard.SendToBack();
+            loggedUser = user;
         }
 
 
@@ -132,6 +136,13 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
         {
             hideSubMenu();
             openContainerForm(new Form_About());
+        }
+
+        private void btn_Dashboard_frmAD_Click(object sender, EventArgs e)
+        {
+            Program.SetMainForm(new Form_Dashboard(loggedUser));
+            Program.ShowMainForm();
+            this.Close();
         }
     }
 }

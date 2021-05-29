@@ -1,5 +1,6 @@
 ﻿using RBS_Restaurant_Billing_System.Layer_Logic;
 using RBS_Restaurant_Billing_System.Layer_Data;
+using RBS_Restaurant_Billing_System.Layer_UI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Printing;
 
 namespace RBS_Restaurant_Billing_System.Layer_UI
 {
@@ -16,20 +18,27 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
     public partial class Form_Dashboard : Form
     {
         System.Windows.Forms.Timer timer = null;
+
         Logic_Transactions logic_Transactions = new Logic_Transactions();
-        Data_Menu menuD = new Data_Menu();
         Data_Transactions transactionD = new Data_Transactions();
+        Data_Menu menuD = new Data_Menu();
         static DataTable menuData = null;
+        //Logic_User logic_User = new Logic_User();
+        //Data_User userD = new Data_User();
+
         static Control activeBill = null;
         static Control activeMenu = null;
         static Control activeButton = null;
         static List<Control> pendingTables = new List<Control>();
 
+        static DataTable loggedUser;
 
-        public Form_Dashboard()
+
+        public Form_Dashboard(DataTable user)
         {
             InitializeComponent();
             StartTimer();
+            loggedUser = user;
 
         }
         private void Form_Dashboard_Load(object sender, EventArgs e)
@@ -38,6 +47,7 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             this.rBS_MenuTableAdapter.Fill(this.rBS_DatabaseDataSet.RBS_Menu);
             TableButtonsSetup();
             menuData = menuD.Select();
+            lbl_username_frmDashboard.Text = "User : " + loggedUser.Rows[0]["Username"].ToString();
         }
 
         
@@ -281,7 +291,7 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             total.Dock = DockStyle.Bottom;
             total.TextAlign = ContentAlignment.MiddleRight;
             Label cashier = new Label();
-            cashier.Text = "Cashier : Leonardo";
+            cashier.Text = "Cashier : "+ loggedUser.Rows[0]["Username"].ToString();
             cashier.Dock = DockStyle.Left;
             cashier.TextAlign = ContentAlignment.MiddleCenter;
             cashier.AutoSize = true;
@@ -289,6 +299,7 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             subTotal.Tag = subVAT;
             subVAT.Tag = discount;
             discount.Tag = total;
+            total.Tag = cashier;
             billTotal.Controls.Add(cashier);
             billTotal.Controls.Add(discount);
             billTotal.Controls.Add(subVAT);
@@ -612,6 +623,7 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
                     if (pendingTables.Contains(activeButton))
                         pendingTables.Remove(activeButton);
                     activeButton.BackColor = Color.FromArgb(19, 7, 17);
+                    btn_pending_frmDashboard.BackColor = Color.FromArgb(19, 7, 17);
                     pnl_MenuContainer_frmDashboard.Controls.Remove(activeMenu);
                     pnl_billContainer_frmDashboard.Controls.Remove(activeBill);
                     activeButton = null;
@@ -630,6 +642,7 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
                 btn_pending_frmDashboard.BackColor = Color.FromArgb(149, 34, 153);
             }
         }
+        
         private void cancelPendingToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (pendingTables.Contains(activeButton))
@@ -640,17 +653,85 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
         
         private void btn_checkout_frmDashboard_Click(object sender, EventArgs e)
         {
+            if (activeButton != null)
+            {
+                TableLayoutPanel billTable = activeBill.Tag as TableLayoutPanel;
+                ReTotalBill(billTable);
+                Panel billTotals = billTable.Tag as Panel;
 
-            //activeButton.BackColor = Color.FromArgb(57, 21, 51);
-            //if (pendingTables.Contains(activeButton))
-            //   pendingTables.Remove(activeButton);
+                if (!(billTable.RowCount>1))
+                {
+                    return;
+                }
+
+                Label subTotal = billTotals.Tag as Label;
+                Label vat = subTotal.Tag as Label;
+                Label discount = vat.Tag as Label;
+                Label gtotal = discount.Tag as Label;
+                Label casier = gtotal.Tag as Label;
+
+                logic_Transactions.Amount = float.Parse(gtotal.Text.Split(':')[1]);
+                logic_Transactions.Cashier = casier.Text.Split(':')[1].ToString().Trim();
+
+                for (int i = 1; i < billTable.RowCount; i++)
+                {
+                    Control item = billTable.GetControlFromPosition(0, i);
+                    Control quantity = billTable.GetControlFromPosition(2, i);
+                    logic_Transactions.Items += item.Text.ToString() + "X" + quantity.Text.ToString() + ",";
+                }
+
+                var confirmResult = MessageBox.Show("Confirm To CHECKOUT " + activeButton.Text + " Order", "Confirm To CHECKOUT [" + activeButton.Text + "] Order", MessageBoxButtons.YesNo);
+                if (confirmResult != DialogResult.Yes)
+                {
+                    return;
+                }
+
+                bool x = transactionD.Insert(logic_Transactions);
+                if (x)
+                    MessageBox.Show("Bill Checked out !");
+                else
+                {
+                    MessageBox.Show("COULD NOT Checkout Bill ! Try Again !!");
+                    return;
+                }
+                if (pendingTables.Contains(activeButton))
+                    pendingTables.Remove(activeButton);
+                btn_pending_frmDashboard.BackColor = Color.FromArgb(19, 7, 17);
+                activeButton.Tag = null;
+                if (pendingTables.Contains(activeButton))
+                    pendingTables.Remove(activeButton);
+                activeButton.BackColor = Color.FromArgb(19, 7, 17);
+                pnl_MenuContainer_frmDashboard.Controls.Remove(activeMenu);
+                pnl_billContainer_frmDashboard.Controls.Remove(activeBill);
+                activeButton = null;
+            }
+
+            
+
         }
 
         private void btn_print_frmDashboard_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Print Function Coming Soon !!");
+            //printPreviewDialog.Document = printDocument;
+            //printDocument.
+            //printPreviewDialog.ShowDialog();
+            
+
 
         }
 
-        
+        private void printDocument_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            e.Graphics.DrawString("Foodie Seoul By Gautam", new Font((string)"Calibri", (float)12, FontStyle.Regular), Brushes.Black, new Point(50, 20));
+
+        }
+
+        private void btn_menu_frmDashboard_Click(object sender, EventArgs e)
+        {
+            Program.SetMainForm(new Form_Login());
+            Program.ShowMainForm();
+            //this.Close();
+        }
     }
 }
