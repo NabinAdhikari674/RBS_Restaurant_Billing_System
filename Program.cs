@@ -1,9 +1,5 @@
 ﻿using RBS_Restaurant_Billing_System.Layer_UI;
-using RBS_Restaurant_Billing_System.Layer_UI.AdminUI;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace RBS_Restaurant_Billing_System

@@ -203,7 +203,7 @@ SELECT Id, Username, Email, Password, Role, Phone, Address FROM RBS_Users WHERE 
   <xs:element name="RBS_DatabaseDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="RBS_DatabaseDataSet" msprop:Generator_UserDSName="RBS_DatabaseDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="RBS_Menu" msprop:Generator_TableClassName="RBS_MenuDataTable" msprop:Generator_TableVarName="tableRBS_Menu" msprop:Generator_TablePropName="RBS_Menu" msprop:Generator_RowDeletingName="RBS_MenuRowDeleting" msprop:Generator_RowChangingName="RBS_MenuRowChanging" msprop:Generator_RowEvHandlerName="RBS_MenuRowChangeEventHandler" msprop:Generator_RowDeletedName="RBS_MenuRowDeleted" msprop:Generator_UserTableName="RBS_Menu" msprop:Generator_RowChangedName="RBS_MenuRowChanged" msprop:Generator_RowEvArgName="RBS_MenuRowChangeEvent" msprop:Generator_RowClassName="RBS_MenuRow">
+        <xs:element name="RBS_Menu" msprop:Generator_TableClassName="RBS_MenuDataTable" msprop:Generator_TableVarName="tableRBS_Menu" msprop:Generator_RowChangedName="RBS_MenuRowChanged" msprop:Generator_TablePropName="RBS_Menu" msprop:Generator_RowDeletingName="RBS_MenuRowDeleting" msprop:Generator_RowChangingName="RBS_MenuRowChanging" msprop:Generator_RowEvHandlerName="RBS_MenuRowChangeEventHandler" msprop:Generator_RowDeletedName="RBS_MenuRowDeleted" msprop:Generator_RowClassName="RBS_MenuRow" msprop:Generator_UserTableName="RBS_Menu" msprop:Generator_RowEvArgName="RBS_MenuRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -232,7 +232,7 @@ SELECT Id, Username, Email, Password, Role, Phone, Address FROM RBS_Users WHERE 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="RBS_Transactions" msprop:Generator_TableClassName="RBS_TransactionsDataTable" msprop:Generator_TableVarName="tableRBS_Transactions" msprop:Generator_TablePropName="RBS_Transactions" msprop:Generator_RowDeletingName="RBS_TransactionsRowDeleting" msprop:Generator_RowChangingName="RBS_TransactionsRowChanging" msprop:Generator_RowEvHandlerName="RBS_TransactionsRowChangeEventHandler" msprop:Generator_RowDeletedName="RBS_TransactionsRowDeleted" msprop:Generator_UserTableName="RBS_Transactions" msprop:Generator_RowChangedName="RBS_TransactionsRowChanged" msprop:Generator_RowEvArgName="RBS_TransactionsRowChangeEvent" msprop:Generator_RowClassName="RBS_TransactionsRow">
+        <xs:element name="RBS_Transactions" msprop:Generator_TableClassName="RBS_TransactionsDataTable" msprop:Generator_TableVarName="tableRBS_Transactions" msprop:Generator_RowChangedName="RBS_TransactionsRowChanged" msprop:Generator_TablePropName="RBS_Transactions" msprop:Generator_RowDeletingName="RBS_TransactionsRowDeleting" msprop:Generator_RowChangingName="RBS_TransactionsRowChanging" msprop:Generator_RowEvHandlerName="RBS_TransactionsRowChangeEventHandler" msprop:Generator_RowDeletedName="RBS_TransactionsRowDeleted" msprop:Generator_RowClassName="RBS_TransactionsRow" msprop:Generator_UserTableName="RBS_Transactions" msprop:Generator_RowEvArgName="RBS_TransactionsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -255,7 +255,7 @@ SELECT Id, Username, Email, Password, Role, Phone, Address FROM RBS_Users WHERE 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="RBS_Users" msprop:Generator_TableClassName="RBS_UsersDataTable" msprop:Generator_TableVarName="tableRBS_Users" msprop:Generator_TablePropName="RBS_Users" msprop:Generator_RowDeletingName="RBS_UsersRowDeleting" msprop:Generator_RowChangingName="RBS_UsersRowChanging" msprop:Generator_RowEvHandlerName="RBS_UsersRowChangeEventHandler" msprop:Generator_RowDeletedName="RBS_UsersRowDeleted" msprop:Generator_UserTableName="RBS_Users" msprop:Generator_RowChangedName="RBS_UsersRowChanged" msprop:Generator_RowEvArgName="RBS_UsersRowChangeEvent" msprop:Generator_RowClassName="RBS_UsersRow">
+        <xs:element name="RBS_Users" msprop:Generator_TableClassName="RBS_UsersDataTable" msprop:Generator_TableVarName="tableRBS_Users" msprop:Generator_RowChangedName="RBS_UsersRowChanged" msprop:Generator_TablePropName="RBS_Users" msprop:Generator_RowDeletingName="RBS_UsersRowDeleting" msprop:Generator_RowChangingName="RBS_UsersRowChanging" msprop:Generator_RowEvHandlerName="RBS_UsersRowChangeEventHandler" msprop:Generator_RowDeletedName="RBS_UsersRowDeleted" msprop:Generator_RowClassName="RBS_UsersRow" msprop:Generator_UserTableName="RBS_Users" msprop:Generator_RowEvArgName="RBS_UsersRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -315,7 +315,7 @@ SELECT Id, Username, Email, Password, Role, Phone, Address FROM RBS_Users WHERE 
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK__RBS_Trans__Cashi__440B1D61" msdata:parent="RBS_Users" msdata:child="RBS_Transactions" msdata:parentkey="Username" msdata:childkey="Cashier" msprop:Generator_UserChildTable="RBS_Transactions" msprop:Generator_ChildPropName="GetRBS_TransactionsRows" msprop:Generator_UserRelationName="FK__RBS_Trans__Cashi__440B1D61" msprop:Generator_RelationVarName="relationFK__RBS_Trans__Cashi__440B1D61" msprop:Generator_UserParentTable="RBS_Users" msprop:Generator_ParentPropName="RBS_UsersRow" />
+      <msdata:Relationship name="FK__RBS_Trans__Cashi__440B1D61" msdata:parent="RBS_Users" msdata:child="RBS_Transactions" msdata:parentkey="Username" msdata:childkey="Cashier" msprop:Generator_UserChildTable="RBS_Transactions" msprop:Generator_ChildPropName="GetRBS_TransactionsRows" msprop:Generator_UserRelationName="FK__RBS_Trans__Cashi__440B1D61" msprop:Generator_ParentPropName="RBS_UsersRow" msprop:Generator_RelationVarName="relationFK__RBS_Trans__Cashi__440B1D61" msprop:Generator_UserParentTable="RBS_Users" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

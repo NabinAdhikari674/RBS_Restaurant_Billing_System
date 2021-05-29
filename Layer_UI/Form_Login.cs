@@ -1,14 +1,7 @@
 ﻿using RBS_Restaurant_Billing_System.Layer_Data;
 using RBS_Restaurant_Billing_System.Layer_Logic;
-using RBS_Restaurant_Billing_System.Layer_UI.AdminUI;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace RBS_Restaurant_Billing_System.Layer_UI
@@ -31,10 +24,10 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             DataTable user = userData.SelectUser(userLogic);
             if (user.Rows.Count > 0)
             {
-                string salt1 = crypto.GenerateHash(userLogic.Username,"x2hl3b3i3nStGP3Ba1Gt");
+                string salt1 = crypto.GenerateHash(userLogic.Username, "x2hl3b3i3nStGP3Ba1Gt");
                 string salt2 = crypto.GenerateHash(userLogic.Password, salt1);
-                
-                if (crypto.Authenticate(userLogic.Password, user.Rows[0]["Password"].ToString(), salt2) )
+
+                if (crypto.Authenticate(userLogic.Password, user.Rows[0]["Password"].ToString(), salt2))
                 {
                     if (chkB_adminPnl_frmLoginScreen.Checked && user.Rows[0]["Role"].ToString() == "Admin")
                     {

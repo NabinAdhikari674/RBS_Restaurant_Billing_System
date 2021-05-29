@@ -59,7 +59,7 @@ namespace RBS_Restaurant_Billing_System.Layer_UI.AdminUI.UsersUI
 
         private void btn_addUser_frmAD_Click(object sender, EventArgs e)
         {
-            if(btn_addUser_frmAD.Text == "Update User")
+            if (btn_addUser_frmAD.Text == "Update User")
             {
                 UpdateUser();
                 return;
@@ -81,7 +81,7 @@ namespace RBS_Restaurant_Billing_System.Layer_UI.AdminUI.UsersUI
 
             if (userD.Insert(userL))
             {
-                MessageBox.Show("User ["+userL.Username+"] Added Sucessfully !!");
+                MessageBox.Show("User [" + userL.Username + "] Added Sucessfully !!");
                 rBS_UsersDataGridView.Update();
                 input_username.Text = "";
                 input_password.Text = "";
@@ -114,7 +114,7 @@ namespace RBS_Restaurant_Billing_System.Layer_UI.AdminUI.UsersUI
 
             if (userD.Update(userL))
             {
-                MessageBox.Show("Selected user ["+userL.Username+"] Updated Sucessfully !");
+                MessageBox.Show("Selected user [" + userL.Username + "] Updated Sucessfully !");
                 rBS_UsersDataGridView.Update();
 
             }

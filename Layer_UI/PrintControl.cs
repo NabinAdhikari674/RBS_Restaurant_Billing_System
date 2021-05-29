@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
@@ -107,7 +103,7 @@ namespace RBS_Restaurant_Billing_System.Layer_UI
             }
         }
 
-    internal class RichEditPrinter : IDisposable
+        internal class RichEditPrinter : IDisposable
         {
             Graphics dc = null;
             RTBPrinter rtb = null;

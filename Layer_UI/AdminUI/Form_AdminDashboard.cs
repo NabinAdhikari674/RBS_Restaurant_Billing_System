@@ -4,13 +4,7 @@ using RBS_Restaurant_Billing_System.Layer_UI.AdminUI.ProductsUI;
 using RBS_Restaurant_Billing_System.Layer_UI.AdminUI.TransactionsUI;
 using RBS_Restaurant_Billing_System.Layer_UI.AdminUI.UsersUI;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace RBS_Restaurant_Billing_System.Layer_UI
